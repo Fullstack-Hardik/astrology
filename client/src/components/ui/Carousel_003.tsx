@@ -84,6 +84,7 @@ const Carousel_003 = ({
           slidesPerView="auto"
           centeredSlides={true}
           loop={loop}
+          loopedSlides={images.length}
           coverflowEffect={{
             rotate: 40,
             stretch: 0,

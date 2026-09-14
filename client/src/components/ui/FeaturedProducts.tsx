@@ -1,0 +1,109 @@
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { ArrowRight, ShoppingBag } from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Button } from "@/components/ui/button";
+
+const tabsData = [
+  {
+    value: "new-arrivals",
+    label: "New Arrivals",
+    products: [
+      { id: 1, name: "Purification Sage Bundle", category: "Botanicals", price: "$24", image: "/images/featured_product_1.png" },
+      { id: 2, name: "Luminous Quartz Cluster", category: "Crystals", price: "$85", image: "/images/featured_product_2.png" },
+      { id: 3, name: "Celestial Journey Journal", category: "Stationery", price: "$32", image: "/images/featured_product_3.png" },
+      { id: 4, name: "Aura Cleansing Mist", category: "Apothecary", price: "$28", image: "/images/featured_product_4.png" },
+    ]
+  },
+  {
+    value: "best-sellers",
+    label: "Best Sellers",
+    products: [
+      { id: 5, name: "Aura Cleansing Mist", category: "Apothecary", price: "$28", image: "/images/featured_product_4.png" },
+      { id: 6, name: "Purification Sage Bundle", category: "Botanicals", price: "$24", image: "/images/featured_product_1.png" },
+      { id: 7, name: "Luminous Quartz Cluster", category: "Crystals", price: "$85", image: "/images/featured_product_2.png" },
+      { id: 8, name: "Celestial Journey Journal", category: "Stationery", price: "$32", image: "/images/featured_product_3.png" },
+    ]
+  },
+  {
+    value: "ritual-kits",
+    label: "Ritual Kits",
+    products: [
+      { id: 9, name: "Celestial Journey Journal", category: "Stationery", price: "$32", image: "/images/featured_product_3.png" },
+      { id: 10, name: "Luminous Quartz Cluster", category: "Crystals", price: "$85", image: "/images/featured_product_2.png" },
+      { id: 11, name: "Aura Cleansing Mist", category: "Apothecary", price: "$28", image: "/images/featured_product_4.png" },
+      { id: 12, name: "Purification Sage Bundle", category: "Botanicals", price: "$24", image: "/images/featured_product_1.png" },
+    ]
+  }
+];
+
+export const FeaturedProducts = () => {
+  return (
+    <section className="py-20 md:py-32 bg-background border-t border-border">
+      <div className="container-full">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-12">
+          <div>
+            <p className="mb-4 text-xs font-semibold uppercase tracking-editorial text-primary">Curated selection</p>
+            <h2 className="text-4xl leading-tight md:text-5xl font-serif">Featured Offerings</h2>
+          </div>
+          <Button variant="link" className="text-primary p-0 hidden md:flex items-center gap-2">
+            View all products <ArrowRight className="w-4 h-4" />
+          </Button>
+        </div>
+
+        <Tabs defaultValue="new-arrivals" className="w-full">
+          <TabsList className="mb-12 bg-transparent border-b border-border w-full justify-start rounded-none h-auto p-0 gap-8">
+            {tabsData.map((tab) => (
+              <TabsTrigger 
+                key={tab.value} 
+                value={tab.value}
+                className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent data-[state=active]:shadow-none px-0 py-4 text-base font-medium text-muted-foreground data-[state=active]:text-foreground uppercase tracking-widest transition-all"
+              >
+                {tab.label}
+              </TabsTrigger>
+            ))}
+          </TabsList>
+
+          {tabsData.map((tab) => (
+            <TabsContent key={tab.value} value={tab.value} className="mt-0 outline-none">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                {tab.products.map((product, index) => (
+                  <motion.div
+                    key={product.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className="group relative cursor-pointer"
+                  >
+                    <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-muted mb-5">
+                      <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500 z-10" />
+                      <img 
+                        src={product.image} 
+                        alt={product.name} 
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                      
+                      {/* Buy Button Overlay */}
+                      <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 z-20">
+                        <Button className="w-full bg-background/90 text-foreground hover:bg-primary hover:text-primary-foreground backdrop-blur-md transition-colors shadow-lg">
+                          <ShoppingBag className="w-4 h-4 mr-2" /> Add to Cart
+                        </Button>
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-1">
+                      <p className="text-xs uppercase tracking-widest text-muted-foreground">{product.category}</p>
+                      <h3 className="font-serif text-xl line-clamp-1 group-hover:text-primary transition-colors">{product.name}</h3>
+                      <p className="text-sm font-medium">{product.price}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </TabsContent>
+          ))}
+        </Tabs>
+      </div>
+    </section>
+  );
+};

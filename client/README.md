@@ -1,50 +1,16 @@
-# Astrology
+# Divine Wheel Of Fortune - Astrology Platform
 
-Create a design-driven ecommerce website for a boutique brand selling home and lifestyle objects.
+A modern astrology and spiritual guidance platform built with React, Vite, and Tailwind CSS.
 
-Visual style: warm, sophisticated, modern Scandinavian influence. Neutral colors, textured backgrounds, elegant serif typography.
+## Features
+- Interactive 3D components and smooth scroll effects
+- Booking and scheduling integration
+- E-commerce functionality for spiritual goods
+- Responsive modern design
 
-Product category: home decor and objects (lamps, ceramics, furniture, vases).
-
-Homepage:
-
-Lifestyle photography showing products in real environments.
-
-Curated collections and seasonal highlights.
-
-Product listing page:
-
-Editorial-style grid with generous spacing.
-
-Product detail page:
-
-Large contextual images.
-
-Craftsmanship and story-focused descriptions.
-
-UX tone: curated, thoughtful, slow-living, premium.
-
-Include: wishlist, cart drawer, smooth transitions between sections.
-
-This project was built with [Lovable](https://lovable.dev).
-
-**Live app**: https://subtle-luxury-goods.lovable.app
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/5d199a60-0127-49f6-9e99-a54b43c91dbd).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
-```
+## Tech Stack
+- React + Vite
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- React Router DOM

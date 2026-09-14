@@ -7,12 +7,12 @@ import { Button } from "@/components/ui/button";
 import CurvedLoop from "@/components/CurvedLoop";
 import MarqueeSection from "@/components/MarqueeSection";
 import DriftWall from "@/components/ui/DriftWall";
-import InformationDrawer from "@/components/ui/information-drawer";
+import { ParallaxScrollFeatureSection } from "@/components/ui/parallax-scroll-feature-section";
+import { FeaturedProducts } from "@/components/ui/FeaturedProducts";
 import Carousel_003 from "@/components/ui/Carousel_003";
 import Aurora from "@/components/ui/Aurora";
 
-import heroVideo from "@/assets/divine-wheel-hero.mp4.asset.json";
-
+// Removed broken heroVideo import
 const services = [
   { title: "Tarot Card Reading", description: "Receive intuitive perspective on the questions and crossroads present in your life.", symbol: "✦" },
   { title: "Cord-Cutting Ritual", description: "A guided energetic ritual created to support release, renewal, and clearer boundaries.", symbol: "∞" },
@@ -24,15 +24,13 @@ const services = [
   { title: "Astrology Consultation", description: "A personal conversation exploring your birth chart, cycles, and current season.", symbol: "☾" },
 ];
 
-const servicesData = services.map((service, index) => ({
-  id: String(index),
-  slug: service.title.toLowerCase().replace(/ /g, '-'),
+const parallaxServices = services.map((service, index) => ({
+  id: index + 1,
   title: service.title,
-  content: `<p>${service.description}</p>`,
-  featuredImage: "", 
-  teams: {
-    designation: service.symbol,
-  }
+  description: service.description,
+  symbol: service.symbol,
+  imageUrl: `/images/${service.title.toLowerCase().replace(/ & /g, '_').replace(/ /g, '_').replace(/-/g, '_')}.png`,
+  reverse: index % 2 !== 0
 }));
 
 const shopCategories = [
@@ -65,15 +63,17 @@ const Index = () => {
   return (
     <Layout>
       <section className="relative -mt-16 min-h-[88svh] overflow-hidden md:-mt-20">
-        <video className="absolute inset-0 h-full w-full object-cover" autoPlay muted loop playsInline preload="metadata" aria-label="Natasha welcoming you to Divine Wheel Of Fortune">
-          <source src={heroVideo.url} type="video/mp4" />
+        <video className="absolute inset-0 h-full w-full object-cover contrast-[1.15] saturate-[1.2] brightness-90 filter" autoPlay muted loop playsInline preload="metadata" aria-label="Natasha welcoming you to Divine Wheel Of Fortune">
+          <source src="/herovideo.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-hero-overlay" />
-        <div className="container-full relative flex min-h-[88svh] items-end pb-16 pt-32 md:pb-20">
-          <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="max-w-3xl text-primary-foreground">
-            <p className="mb-5 text-xs font-semibold uppercase tracking-editorial text-primary-foreground/80">Intuitive guidance · Energy work · Sacred living</p>
-            <h1 className="text-5xl leading-[0.95] md:text-7xl lg:text-8xl">Divine Wheel<br /><span className="italic font-normal">Of Fortune</span></h1>
-            <p className="mt-7 max-w-xl text-base leading-7 text-primary-foreground/85 md:text-lg">A quiet space with Natasha for insight, healing, and deeper connection to your own inner wisdom.</p>
+        <div className="absolute inset-0 bg-black/40 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-background/20 to-background/80" />
+        <div className="container-full relative flex min-h-[88svh] items-end pb-16 pt-32 md:pb-20 z-10">
+          <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="max-w-3xl text-white drop-shadow-lg">
+            <p className="mb-5 text-xs font-semibold uppercase tracking-editorial text-primary-foreground/90 drop-shadow-md">Intuitive guidance · Energy work · Sacred living</p>
+            <h1 className="text-5xl leading-[0.95] md:text-7xl lg:text-8xl text-white font-serif tracking-tight drop-shadow-xl">Divine Wheel<br /><span className="italic font-normal">Of Fortune</span></h1>
+            <p className="mt-7 max-w-xl text-base leading-7 text-white/90 md:text-lg drop-shadow-md">A quiet space with Natasha for insight, healing, and deeper connection to your own inner wisdom.</p>
             <div className="mt-9 flex flex-wrap gap-3">
               <Button asChild size="lg" className="h-12 rounded-none bg-background px-7 text-foreground hover:bg-background/90"><a href="#book">Book a session <ArrowRight /></a></Button>
               <Button asChild size="lg" variant="outline" className="h-12 rounded-none border-primary-foreground/60 bg-transparent px-7 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"><a href="#services">Explore services</a></Button>
@@ -87,7 +87,7 @@ const Index = () => {
       <section id="about" className="py-20 md:py-32">
         <div className="container-full grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
           <div className="relative aspect-[4/5] overflow-hidden bg-muted">
-            <video className="h-full w-full object-cover" autoPlay muted loop playsInline preload="metadata"><source src={heroVideo.url} type="video/mp4" /></video>
+            <video className="h-full w-full object-cover" autoPlay muted loop playsInline preload="metadata"><source src="/herovideo.mp4" type="video/mp4" /></video>
             <div className="absolute inset-x-0 bottom-0 bg-background/90 p-6 backdrop-blur-md"><p className="font-serif text-2xl">Natasha</p><p className="mt-1 text-xs uppercase tracking-editorial text-primary">Intuitive guide & energy practitioner</p></div>
           </div>
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
@@ -101,15 +101,11 @@ const Index = () => {
         </div>
       </section>
 
-      <div id="services" className="bg-muted/45 py-20 md:py-28 overflow-hidden">
-        <InformationDrawer
+      <div id="services">
+        <ParallaxScrollFeatureSection 
           title="Ways to work together"
           description="Guidance for every season. Choose a focused 30-minute reading or make room for a deeper 60-minute session."
-          backgroundColor="hsl(var(--background))"
-          textColor="hsl(var(--foreground))"
-          sidebarWidth="55%"
-          overlayOpacity={0.65}
-          teams={servicesData}
+          sections={parallaxServices}
         />
       </div>
 
@@ -139,6 +135,8 @@ const Index = () => {
         </div>
       </section>
 
+      <FeaturedProducts />
+
       <section id="shop" className="bg-muted/45 py-20 md:py-28 overflow-hidden">
         <div className="container-full">
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end mb-14">
@@ -147,7 +145,7 @@ const Index = () => {
           </div>
         </div>
         <Carousel_003 
-          images={shopCategories.map(c => ({ src: c.image, alt: c.name, name: c.name, note: c.note }))} 
+          images={[...shopCategories, ...shopCategories].map(c => ({ src: c.image, alt: c.name, name: c.name, note: c.note }))} 
           showNavigation 
           showPagination 
           loop 
