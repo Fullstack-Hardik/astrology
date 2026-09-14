@@ -2,7 +2,7 @@
 import { gsap } from "gsap";
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Instagram, Twitter, Linkedin, Youtube } from 'lucide-react';
+import { FaInstagram as Instagram, FaTwitter as Twitter, FaLinkedin as Linkedin, FaYoutube as Youtube } from 'react-icons/fa';
 
 const Footer = () => {
   const containerVariants = {
