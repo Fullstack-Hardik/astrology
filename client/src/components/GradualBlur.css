@@ -1,0 +1,16 @@
+.gradual-blur {
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+  isolation: isolate;
+}
+
+.gradual-blur-bottom { bottom: 0; }
+.gradual-blur-top { top: 0; }
+.gradual-blur > div { position: absolute; inset: 0; }
+
+@supports not (backdrop-filter: blur(1px)) {
+  .gradual-blur > div { background: hsl(var(--foreground) / 0.08); }
+}

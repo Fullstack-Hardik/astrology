@@ -1,0 +1,29 @@
+.curved-loop-jacket {
+  display: flex;
+  min-height: 15rem;
+  width: 100%;
+  align-items: center;
+  overflow: hidden;
+  cursor: grab;
+  touch-action: pan-y;
+}
+
+.curved-loop-jacket:active { cursor: grabbing; }
+
+.curved-loop-svg {
+  display: block;
+  width: 100%;
+  min-width: 60rem;
+  overflow: visible;
+  user-select: none;
+  fill: hsl(var(--primary-foreground));
+  font-family: var(--font-serif);
+  font-size: 5.25rem;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+@media (max-width: 768px) {
+  .curved-loop-jacket { min-height: 11rem; }
+  .curved-loop-svg { margin-left: -20rem; font-size: 4.5rem; }
+}

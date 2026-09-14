@@ -1,16 +1,50 @@
-# React + Vite
+# Astrology
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Create a design-driven ecommerce website for a boutique brand selling home and lifestyle objects.
 
-Currently, two official plugins are available:
+Visual style: warm, sophisticated, modern Scandinavian influence. Neutral colors, textured backgrounds, elegant serif typography.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Product category: home decor and objects (lamps, ceramics, furniture, vases).
 
-## React Compiler
+Homepage:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Lifestyle photography showing products in real environments.
 
-## Expanding the Oxlint configuration
+Curated collections and seasonal highlights.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+Product listing page:
+
+Editorial-style grid with generous spacing.
+
+Product detail page:
+
+Large contextual images.
+
+Craftsmanship and story-focused descriptions.
+
+UX tone: curated, thoughtful, slow-living, premium.
+
+Include: wishlist, cart drawer, smooth transitions between sections.
+
+This project was built with [Lovable](https://lovable.dev).
+
+**Live app**: https://subtle-luxury-goods.lovable.app
+
+## Build with Lovable
+
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/5d199a60-0127-49f6-9e99-a54b43c91dbd).
+
+- **Ship faster**: describe what you want to build and Lovable handles the code.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+
+## Development
+
+Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+
+```sh
+git clone <this-repository-url>
+cd <repository-name>
+npm i
+npm run dev
+```

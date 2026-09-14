@@ -5,18 +5,23 @@
   overflow: hidden;
   perspective: var(--dw-perspective, 1200px);
   perspective-origin: 50% 50%;
-  --dw-tile-w: 240px;
-  --dw-tile-h: 160px;
-  --dw-gap: 20px;
-  --dw-radius: 16px;
+  --dw-tile-w: 200px;
+  --dw-tile-h: 132px;
+  --dw-gap: 18px;
+  --dw-radius: 14px;
   --dw-lift: 64px;
-  --dw-dim: 0.6;
+  --dw-dim: 0.55;
   --dw-gray: 0;
-  --dw-overlay: rgba(255, 255, 255, 0.4);
-  --dw-edge: 15%;
-  /* Using transparent gradient for super smooth fade out at top and bottom */
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
-  mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+  --dw-overlay: #060010;
+  --dw-edge: 40%;
+  -webkit-mask-image:
+    radial-gradient(ellipse 78% 82% at 50% 46%, #000 var(--dw-edge), transparent 100%),
+    linear-gradient(to top, #000 var(--dw-edge), transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    radial-gradient(ellipse 78% 82% at 50% 46%, #000 var(--dw-edge), transparent 100%),
+    linear-gradient(to top, #000 var(--dw-edge), transparent 100%);
+  mask-composite: intersect;
 }
 
 .drift-wall__plane {
@@ -57,9 +62,10 @@
 .drift-wall__inner {
   position: absolute;
   inset: calc(var(--dw-gap) / 2);
-  display: flex;
+  display: block;
   border-radius: var(--dw-radius);
   overflow: hidden;
+  background: #0b0b12;
   opacity: var(--dw-dim);
   transform: translateZ(0);
   pointer-events: none;
@@ -67,6 +73,17 @@
     transform 0.42s cubic-bezier(0.22, 1, 0.36, 1),
     opacity 0.42s cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.drift-wall__tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(var(--dw-gray)) saturate(0.92);
+  transition: filter 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 .drift-wall__overlay {
@@ -82,7 +99,12 @@
 .drift-wall__tile:focus-visible .drift-wall__inner {
   opacity: 1;
   transform: translateZ(var(--dw-lift));
-  box-shadow: 0 24px 60px -18px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 24px 60px -18px rgba(0, 0, 0, 0.7);
+}
+
+.drift-wall__tile.is-active img,
+.drift-wall__tile:focus-visible img {
+  filter: grayscale(0) saturate(1.05);
 }
 
 .drift-wall__tile.is-active .drift-wall__overlay,
@@ -92,8 +114,8 @@
 
 .drift-wall__tile:focus-visible .drift-wall__inner {
   box-shadow:
-    0 24px 60px -18px rgba(0, 0, 0, 0.2),
-    0 0 0 2px rgba(147, 51, 234, 0.5); /* purple focus ring */
+    0 24px 60px -18px rgba(0, 0, 0, 0.7),
+    0 0 0 2px rgba(255, 255, 255, 0.9);
 }
 
 @media (prefers-reduced-motion: reduce) {
