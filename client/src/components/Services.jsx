@@ -10,35 +10,35 @@ const services = [
     title: "Discover",
     letters: "DISCOVER".split(""),
     description: "Unveil the cosmic blueprint of your soul with deep birth chart analysis.",
-    image: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&q=80&w=800"
+    image: "/images/mystic_astrology_bg_1789373287874.png"
   },
   {
     id: "intuition",
     title: "Intuition",
     letters: "INTUITION".split(""),
     description: "Connect with mystical forces through tarot and spiritual divination.",
-    image: "https://images.unsplash.com/photo-1518149818815-53e77f02b378?auto=format&fit=crop&q=80&w=800"
+    image: "/images/tarot_reading_1789373361016.png"
   },
   {
     id: "harmony",
     title: "Harmony",
     letters: "HARMONY".split(""),
     description: "Align your personal energy with the ancient science of Vastu Shastra.",
-    image: "https://images.unsplash.com/photo-1528319725582-ddc096101511?auto=format&fit=crop&q=80&w=800"
+    image: "/images/crystal_pendant_1789373309080.png"
   },
   {
     id: "guidance",
     title: "Guidance",
     letters: "GUIDANCE".split(""),
     description: "Navigate life's hardest questions with expert astrological support.",
-    image: "https://images.unsplash.com/photo-1516585427167-9f4af9627e6c?auto=format&fit=crop&q=80&w=800"
+    image: "/images/gold_vedic_ring_1789373324078.png"
   },
   {
     id: "remedies",
     title: "Remedies",
     letters: "REMEDIES".split(""),
     description: "Align your planetary energies with ancient mantras, gemstones, and rituals.",
-    image: "https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?auto=format&fit=crop&q=80&w=800"
+    image: "/images/quartz_bracelet_1789373347411.png"
   }
 ];
 
@@ -55,18 +55,15 @@ const Services = () => {
       gsap.set(cards.slice(1), { flexGrow: 1 });
 
       cards.forEach((card, i) => {
-        const solidOverlay = card.querySelector('.solid-overlay');
         const contentBlock = card.querySelector('.content-block');
         const verticalText = card.querySelector('.vertical-text');
         const bgImage = card.querySelector('.bg-image');
 
         if (i === 0) {
-          gsap.set(solidOverlay, { opacity: 0 }); // fully bright when active
           gsap.set(contentBlock, { opacity: 1, y: 0 });
           gsap.set(verticalText, { opacity: 0 });
           gsap.set(bgImage, { scale: 1.05 });
         } else {
-          gsap.set(solidOverlay, { opacity: 0.5 }); // slightly faded when inactive (was 1.0)
           gsap.set(contentBlock, { opacity: 0, y: 30 });
           gsap.set(verticalText, { opacity: 0.8 });
           gsap.set(bgImage, { scale: 1 });
@@ -89,12 +86,10 @@ const Services = () => {
         const currentCard = cards[i];
         const nextCard = cards[i + 1];
 
-        const cSolid = currentCard.querySelector('.solid-overlay');
         const cContent = currentCard.querySelector('.content-block');
         const cVert = currentCard.querySelector('.vertical-text');
         const cBg = currentCard.querySelector('.bg-image');
 
-        const nSolid = nextCard.querySelector('.solid-overlay');
         const nContent = nextCard.querySelector('.content-block');
         const nVert = nextCard.querySelector('.vertical-text');
         const nBg = nextCard.querySelector('.bg-image');
@@ -106,12 +101,10 @@ const Services = () => {
           // Animate current card out
           .to(cContent, { opacity: 0, y: 30, duration: 0.3 }, `step${i}`)
           .to(cVert, { opacity: 0.8, duration: 0.5 }, `step${i}+=0.5`)
-          .to(cSolid, { opacity: 0.5, duration: 0.8 }, `step${i}+=0.2`) // fade to 0.5
           .to(cBg, { scale: 1, duration: 1, ease: "power2.inOut" }, `step${i}`)
 
           // Animate next card in
           .to(nVert, { opacity: 0, duration: 0.3 }, `step${i}`)
-          .to(nSolid, { opacity: 0, duration: 0.8 }, `step${i}+=0.2`) // brighten to 0
           .to(nContent, { opacity: 1, y: 0, duration: 0.5 }, `step${i}+=0.5`)
           .to(nBg, { scale: 1.05, duration: 1, ease: "power2.inOut" }, `step${i}`);
       }
@@ -136,20 +129,17 @@ const Services = () => {
             <div
               key={service.id}
               ref={(el) => (cardsRef.current[index] = el)}
-              className="relative overflow-hidden rounded-3xl md:rounded-[2rem] shadow-xl flex shrink-0"
+              className="group relative overflow-hidden rounded-3xl md:rounded-[2rem] shadow-xl flex shrink-0 border border-transparent transition-[border-color,box-shadow] duration-300 hover:border-purple-500 hover:shadow-[0_0_20px_rgba(168,85,247,0.4)]"
               style={{ minHeight: "80px", minWidth: "60px" }}
             >
               {/* Background Image */}
               <div 
-                className="bg-image absolute inset-0 bg-cover bg-center"
+                className="bg-image absolute inset-0 bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-700"
                 style={{ backgroundImage: `url(${service.image})` }}
               />
               
               {/* Gradient Overlay (only at bottom so image is super bright) */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent pointer-events-none" />
-              
-              {/* Solid Overlay (animated to dim inactive cards) */}
-              <div className="solid-overlay absolute inset-0 bg-black/80 pointer-events-none" />
 
               {/* Vertical/Horizontal Text */}
               <div className="vertical-text absolute inset-0 flex items-center justify-center p-4 pointer-events-none">

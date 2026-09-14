@@ -20,7 +20,7 @@ const ProductDetails = () => {
   };
 
   return (
-    <div className="pt-24 pb-20 bg-slate-900 min-h-screen">
+    <div className="pt-24 pb-20 bg-slate-900/40 backdrop-blur-md min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Breadcrumb */}
@@ -32,7 +32,7 @@ const ProductDetails = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Product Image */}
-          <div className="rounded-2xl overflow-hidden border border-purple-900/50 shadow-sm aspect-square bg-slate-950 relative">
+          <div className="rounded-2xl overflow-hidden border border-purple-900/50 shadow-sm aspect-square bg-transparent relative">
             <img 
               src={product.image} 
               alt={product.name}
@@ -69,7 +69,7 @@ const ProductDetails = () => {
 
             {/* Actions */}
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
-              <div className="flex items-center border border-purple-900 rounded-xl bg-slate-950 w-32">
+              <div className="flex items-center border border-purple-900 rounded-xl bg-transparent w-32">
                 <button 
                   className="px-4 py-3 text-slate-600 hover:text-purple-600"
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}

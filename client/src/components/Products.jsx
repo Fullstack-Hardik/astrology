@@ -9,33 +9,33 @@ const Products = () => {
       name: "Amethyst Crystal Pendant",
       price: "$120.00",
       rating: 4.8,
-      image: "https://images.unsplash.com/photo-1599643478524-fb666453630f?q=80&w=1000&auto=format&fit=crop"
+      image: "/images/crystal_pendant_1789373309080.png"
     },
     {
       id: 2,
       name: "Vedic Gold Ring",
       price: "$450.00",
       rating: 5.0,
-      image: "https://images.unsplash.com/photo-1605100804763-247f67963c9e?q=80&w=1000&auto=format&fit=crop"
+      image: "/images/gold_vedic_ring_1789373324078.png"
     },
     {
       id: 3,
       name: "Rose Quartz Bracelet",
       price: "$85.00",
       rating: 4.6,
-      image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=1000&auto=format&fit=crop"
+      image: "/images/quartz_bracelet_1789373347411.png"
     },
     {
       id: 4,
       name: "Sapphire Astrological Gem",
       price: "$890.00",
       rating: 4.9,
-      image: "https://images.unsplash.com/photo-1596401057633-54a8fe8ef647?q=80&w=1000&auto=format&fit=crop"
+      image: "/images/tarot_reading_1789373361016.png"
     }
   ];
 
   return (
-    <section className="bg-slate-900 py-20 px-4 sm:px-6 md:px-12">
+    <section className="bg-slate-900/40 backdrop-blur-md py-20 px-4 sm:px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-end mb-12">
           <div>
@@ -59,21 +59,12 @@ const Products = () => {
               initial="initial"
               className="group cursor-pointer"
             >
-              <div className="relative overflow-hidden rounded-2xl bg-slate-900 aspect-[4/5] mb-4">
+              <div className="relative overflow-hidden rounded-2xl aspect-[4/5] mb-4 shadow-lg border border-transparent transition-all duration-300 hover:border-purple-500 hover:shadow-[0_0_20px_rgba(168,85,247,0.4)]">
                 {/* Product Image */}
                 <motion.img 
                   src={product.image} 
                   alt={product.name}
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                />
-                
-                {/* Flashy "Iced" Shine Effect Overlay */}
-                <motion.div 
-                  className="absolute inset-0 bg-gradient-to-tr from-transparent via-white to-transparent opacity-0 group-hover:opacity-30"
-                  initial={{ x: '-100%', y: '100%' }}
-                  variants={{
-                    hover: { x: '100%', y: '-100%', transition: { duration: 0.8, ease: "easeInOut" } }
-                  }}
+                  className="w-full h-full object-cover grayscale transition-all duration-700 ease-out group-hover:grayscale-0 group-hover:scale-110"
                 />
 
                 {/* Add to Cart Overlay */}

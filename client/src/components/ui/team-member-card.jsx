@@ -12,7 +12,7 @@ export default function TeamMemberCard({
   jobPosition = 'Master Astrologer',
   firstName = 'Cosmic',
   lastName = 'Guide',
-  imageUrl = 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop',
+  imageUrl = '/images/mystic_avatar_1789373377529.png',
   description = 'I am a skilled spiritual guide with decades of experience in modern Vedic astrology and tarot. My passion lies in creating a seamless cosmic experience and offering unparalleled clarity on your life journey.',
   className,
 }) {

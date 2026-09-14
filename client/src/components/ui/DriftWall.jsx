@@ -236,7 +236,7 @@ const DriftWall = ({
   const renderTile = (item, id, colIndex) => {
     const inner = (
       <span className="drift-wall__inner bg-white/95 p-6 flex flex-col justify-center items-center text-center shadow-lg border border-purple-900/50">
-        <p className="text-slate-100 font-medium text-sm leading-relaxed mb-3">"{item.text}"</p>
+        <p className="text-slate-900 font-medium text-sm leading-relaxed mb-3">"{item.text}"</p>
         <span className="text-purple-600 text-xs font-semibold tracking-wide">{item.author}</span>
         <span className="drift-wall__overlay" aria-hidden="true" />
       </span>

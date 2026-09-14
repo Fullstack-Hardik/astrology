@@ -34,8 +34,8 @@ const Navbar = () => {
       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
       className={`fixed top-0 w-full z-50 transition-colors duration-500 ${
         scrolled 
-          ? 'bg-white/80 backdrop-blur-xl border-b border-slate-700/50 shadow-sm py-1' 
-          : 'bg-white/40 backdrop-blur-md py-3 border-b border-transparent'
+          ? 'bg-white/90 backdrop-blur-xl border-b border-slate-200 shadow-sm py-1' 
+          : 'bg-white/50 backdrop-blur-md py-3 border-b border-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-14">
@@ -54,7 +54,7 @@ const Navbar = () => {
             <motion.div key={link.name} whileHover={{ y: -2 }} transition={{ type: "spring", stiffness: 400, damping: 17 }}>
               <Link 
                 to={link.path} 
-                className="flex items-center gap-1.5 text-[13px] font-medium text-slate-300 hover:text-purple-700 transition-colors opacity-90 hover:opacity-100"
+                className="flex items-center gap-1.5 text-[13px] font-medium text-slate-900 hover:text-purple-700 transition-colors opacity-90 hover:opacity-100"
               >
                 {link.icon}
                 <span>{link.name}</span>
@@ -65,15 +65,15 @@ const Navbar = () => {
 
         {/* Right Section (Search, User, Cart, Mobile Toggle) */}
         <div className="flex items-center gap-5">
-          <button className="text-slate-300 hover:text-white transition-colors opacity-90 hover:opacity-100 hidden sm:block">
+          <button className="text-slate-900 hover:text-white transition-colors opacity-90 hover:opacity-100 hidden sm:block">
             <Search size={17} />
           </button>
           
-          <Link to="/login" className="text-slate-300 hover:text-white transition-colors opacity-90 hover:opacity-100 hidden sm:block">
+          <Link to="/login" className="text-slate-900 hover:text-white transition-colors opacity-90 hover:opacity-100 hidden sm:block">
             <User size={17} />
           </Link>
           
-          <Link to="/cart" className="relative text-slate-300 hover:text-white transition-colors opacity-90 hover:opacity-100">
+          <Link to="/cart" className="relative text-slate-900 hover:text-white transition-colors opacity-90 hover:opacity-100">
             <ShoppingCart size={17} />
             <span className="absolute -top-1.5 -right-2 bg-orange-500 text-white text-[9px] font-bold w-3.5 h-3.5 rounded-full flex items-center justify-center">
               2
@@ -82,7 +82,7 @@ const Navbar = () => {
 
           {/* Hamburger Menu Button (Mobile) */}
           <button 
-            className="lg:hidden text-slate-300 hover:text-white transition-colors w-6 h-6 flex justify-center items-center relative"
+            className="lg:hidden text-slate-900 hover:text-white transition-colors w-6 h-6 flex justify-center items-center relative"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             <div className={`absolute transition-all duration-500 ease-out ${mobileMenuOpen ? 'rotate-180 opacity-0 scale-50' : 'rotate-0 opacity-100 scale-100'}`}>
@@ -107,7 +107,7 @@ const Navbar = () => {
               key={link.name} 
               to={link.path} 
               onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center gap-3 py-3 text-[15px] font-medium text-slate-100 border-b border-slate-100 hover:text-purple-600 transition-colors"
+              className="flex items-center gap-3 py-3 text-[15px] font-medium text-slate-900 border-b border-slate-100 hover:text-purple-600 transition-colors"
             >
               <div className="text-purple-500">{link.icon}</div>
               {link.name}
@@ -115,11 +115,11 @@ const Navbar = () => {
           ))}
           
           <div className="sm:hidden flex gap-4 mt-6">
-            <button className="flex-1 flex items-center justify-center gap-2 rounded-xl bg-slate-900 text-slate-100 py-3 text-sm font-medium">
+            <button className="flex-1 flex items-center justify-center gap-2 rounded-xl bg-slate-900/40 backdrop-blur-md text-slate-900 py-3 text-sm font-medium">
               <Search size={16} />
               <span>Search</span>
             </button>
-            <Link to="/login" onClick={() => setMobileMenuOpen(false)} className="flex-1 flex items-center justify-center gap-2 rounded-xl bg-slate-900 text-slate-100 py-3 text-sm font-medium">
+            <Link to="/login" onClick={() => setMobileMenuOpen(false)} className="flex-1 flex items-center justify-center gap-2 rounded-xl bg-slate-900/40 backdrop-blur-md text-slate-900 py-3 text-sm font-medium">
               <User size={16} />
               <span>Login</span>
             </Link>

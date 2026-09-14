@@ -13,12 +13,12 @@ import { cn } from "../../lib/utils";
 
 const Skiper47 = () => {
   const images = [
-    { src: "https://images.unsplash.com/photo-1599643478524-fb666453630f?q=80&w=1000&auto=format&fit=crop", alt: "Amethyst Crystal Pendant" },
-    { src: "https://images.unsplash.com/photo-1605100804763-247f67963c9e?q=80&w=1000&auto=format&fit=crop", alt: "Vedic Gold Ring" },
-    { src: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=1000&auto=format&fit=crop", alt: "Rose Quartz Bracelet" },
-    { src: "https://images.unsplash.com/photo-1596401057633-54a8fe8ef647?q=80&w=1000&auto=format&fit=crop", alt: "Sapphire Astrological Gem" },
-    { src: "https://images.unsplash.com/photo-1573408301145-b98c4af01156?q=80&w=1000&auto=format&fit=crop", alt: "Emerald Harmony Ring" },
-    { src: "https://images.unsplash.com/photo-1603561596112-0a132b757442?q=80&w=1000&auto=format&fit=crop", alt: "Spiritual Healing Necklace" },
+    { src: "/images/crystal_pendant_1789373309080.png", alt: "Amethyst Crystal Pendant" },
+    { src: "/images/gold_vedic_ring_1789373324078.png", alt: "Vedic Gold Ring" },
+    { src: "/images/quartz_bracelet_1789373347411.png", alt: "Rose Quartz Bracelet" },
+    { src: "/images/tarot_reading_1789373361016.png", alt: "Sapphire Astrological Gem" },
+    { src: "/images/crystal_pendant_1789373309080.png", alt: "Emerald Harmony Ring" },
+    { src: "/images/gold_vedic_ring_1789373324078.png", alt: "Spiritual Healing Necklace" },
   ];
 
   return (

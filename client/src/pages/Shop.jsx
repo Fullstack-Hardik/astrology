@@ -13,7 +13,7 @@ const products = [
 
 const Shop = () => {
   return (
-    <div className="pt-24 pb-20 bg-slate-950 min-h-screen">
+    <div className="pt-24 pb-20 bg-transparent min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
@@ -22,7 +22,7 @@ const Shop = () => {
             <h1 className="text-4xl font-bold text-purple-900 mb-2">Cosmic Shop</h1>
             <p className="text-slate-600">Discover premium iced jewelry aligned with your destiny.</p>
           </div>
-          <button className="mt-4 md:mt-0 flex items-center gap-2 bg-slate-900 px-4 py-2 rounded-lg shadow-sm border border-purple-900/50 text-purple-900 hover:bg-purple-50 transition-colors">
+          <button className="mt-4 md:mt-0 flex items-center gap-2 bg-slate-900/40 backdrop-blur-md px-4 py-2 rounded-lg shadow-sm border border-purple-900/50 text-purple-900 hover:bg-purple-50 transition-colors">
             <Filter size={18} />
             Filter & Sort
           </button>
@@ -31,7 +31,7 @@ const Shop = () => {
         {/* Product Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {products.map((product) => (
-            <div key={product.id} className="group relative bg-slate-900 rounded-2xl shadow-sm hover:shadow-xl transition-shadow overflow-hidden border border-purple-900/50">
+            <div key={product.id} className="group relative bg-slate-900/40 backdrop-blur-md rounded-2xl shadow-sm hover:shadow-xl transition-shadow overflow-hidden border border-purple-900/50">
               <Link to={`/product/${product.id}`} className="block relative aspect-[4/5] overflow-hidden">
                 <img 
                   src={product.image} 

@@ -22,7 +22,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative w-full bg-slate-950 text-slate-100 border-t border-purple-900/50 overflow-hidden pt-24 pb-12 z-10 font-sans">
+    <footer className="relative w-full bg-slate-950/80 backdrop-blur-md text-slate-100 border-t border-purple-900/50 overflow-hidden pt-24 pb-12 z-10 font-sans">
       <motion.div 
         variants={containerVariants}
         initial="hidden"
@@ -44,9 +44,9 @@ const Footer = () => {
               <input 
                 type="email" 
                 placeholder="Enter your email" 
-                className="px-6 py-4 rounded-xl border border-slate-700 bg-slate-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all w-full sm:max-w-xs"
+                className="px-6 py-4 rounded-xl border border-slate-700 bg-slate-900/40 backdrop-blur-md shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all w-full sm:max-w-xs"
               />
-              <button className="px-8 py-4 bg-slate-900 hover:bg-purple-700 text-white font-medium rounded-xl transition-colors shadow-md hover:shadow-xl w-full sm:w-auto whitespace-nowrap">
+              <button className="px-8 py-4 bg-slate-900/40 backdrop-blur-md hover:bg-purple-700 text-white font-medium rounded-xl transition-colors shadow-md hover:shadow-xl w-full sm:w-auto whitespace-nowrap">
                 Subscribe Now
               </button>
             </div>
@@ -56,7 +56,7 @@ const Footer = () => {
           <motion.div variants={itemVariants} className="relative w-full flex justify-center lg:justify-end">
             <div className="relative w-full max-w-[500px] aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
               {/* Offset decorative shadow mimicking the image */}
-              <div className="absolute inset-0 bg-slate-900 translate-x-4 translate-y-4 rounded-3xl -z-10 opacity-10"></div>
+              <div className="absolute inset-0 bg-slate-900/40 backdrop-blur-md translate-x-4 translate-y-4 rounded-3xl -z-10 opacity-10"></div>
               <img 
                 src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1200&auto=format&fit=crop" 
                 alt="Beautiful mystical landscape" 
@@ -72,7 +72,7 @@ const Footer = () => {
           {/* Brand Column */}
           <motion.div variants={itemVariants} className="lg:col-span-2">
             <h3 className="text-2xl font-bold text-slate-50 mb-6 tracking-widest flex items-center gap-2">
-              <span className="bg-slate-900 text-white p-1 rounded-full"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L2 22h20L12 2z"/></svg></span>
+              <span className="bg-slate-900/40 backdrop-blur-md text-white p-1 rounded-full"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L2 22h20L12 2z"/></svg></span>
               COSMIC
             </h3>
             <p className="text-slate-400 max-w-xs text-sm leading-relaxed mb-8">

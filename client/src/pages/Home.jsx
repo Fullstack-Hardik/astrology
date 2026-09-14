@@ -4,33 +4,12 @@ import Marquee from '../components/Marquee';
 import Services from '../components/Services';
 import ColorChangeCards from '../components/ui/color-change-card';
 import { Skiper47 } from '../components/ui/product-carousel';
-import ColorBends from '../components/ui/ColorBends';
 import AboutSection from '../components/AboutSection';
 import DriftWall from '../components/ui/DriftWall';
 
 const Home = () => {
   return (
     <main className="relative min-h-screen">
-      {/* Global Fixed Background for the entire page */}
-      <div className="fixed inset-0 z-0 pointer-events-none">
-        <ColorBends
-          colors={["#ff5c7a", "#8a5cff", "#00ffd1"]}
-          rotation={90}
-          speed={0.2}
-          scale={1.5}
-          frequency={1}
-          warpStrength={1}
-          mouseInfluence={1}
-          noise={0.15}
-          parallax={0.5}
-          iterations={1}
-          intensity={1.5}
-          bandWidth={6}
-          transparent
-        />
-        <div className="absolute inset-0 backdrop-blur-[40px] bg-white/15"></div>
-      </div>
-
       {/* Foreground Content */}
       <div className="relative z-10 w-full bg-transparent">
         <Hero />

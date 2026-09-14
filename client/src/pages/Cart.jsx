@@ -14,7 +14,7 @@ const Cart = () => {
   const total = subtotal + shipping;
 
   return (
-    <div className="pt-24 pb-20 bg-slate-950 min-h-screen">
+    <div className="pt-24 pb-20 bg-transparent min-h-screen">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-3xl font-bold text-slate-50 mb-8">Your Cart</h1>
 
@@ -23,7 +23,7 @@ const Cart = () => {
             {/* Cart Items List */}
             <div className="lg:col-span-2 space-y-4">
               {cartItems.map((item) => (
-                <div key={item.id} className="flex items-center gap-6 bg-slate-900 p-4 sm:p-6 rounded-2xl shadow-sm border border-purple-900/50">
+                <div key={item.id} className="flex items-center gap-6 bg-slate-900/40 backdrop-blur-md p-4 sm:p-6 rounded-2xl shadow-sm border border-purple-900/50">
                   <img src={item.image} alt={item.name} className="w-24 h-24 object-cover rounded-xl" />
                   
                   <div className="flex-1">
@@ -46,7 +46,7 @@ const Cart = () => {
             </div>
 
             {/* Order Summary */}
-            <div className="bg-slate-900 p-6 sm:p-8 rounded-2xl shadow-sm border border-purple-900/50 h-fit">
+            <div className="bg-slate-900/40 backdrop-blur-md p-6 sm:p-8 rounded-2xl shadow-sm border border-purple-900/50 h-fit">
               <h2 className="text-xl font-bold text-slate-50 mb-6">Order Summary</h2>
               
               <div className="space-y-4 text-slate-600 mb-6">
@@ -74,7 +74,7 @@ const Cart = () => {
             </div>
           </div>
         ) : (
-          <div className="text-center py-20 bg-slate-900 rounded-2xl shadow-sm border border-purple-900/50">
+          <div className="text-center py-20 bg-slate-900/40 backdrop-blur-md rounded-2xl shadow-sm border border-purple-900/50">
             <p className="text-slate-400 text-lg mb-6">Your cart is completely empty.</p>
             <Link to="/shop" className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-medium py-3 px-8 rounded-xl transition-colors">
               Start Shopping

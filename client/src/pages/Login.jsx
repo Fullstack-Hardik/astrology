@@ -11,8 +11,8 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8 relative z-20">
-      <div className="max-w-md w-full space-y-8 bg-slate-900 p-10 rounded-2xl shadow-xl border border-purple-900/50">
+    <div className="min-h-screen bg-transparent flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8 relative z-20">
+      <div className="max-w-md w-full space-y-8 bg-slate-900/40 backdrop-blur-md p-10 rounded-2xl shadow-xl border border-purple-900/50">
         <div>
           <h2 className="mt-2 text-center text-3xl font-extrabold text-purple-900 tracking-tight">
             Welcome Back
@@ -82,14 +82,14 @@ const Login = () => {
                 <div className="w-full border-t border-purple-900/50"></div>
               </div>
               <div className="relative flex justify-center text-sm">
-                <span className="px-2 bg-slate-900 text-slate-400">Or continue with</span>
+                <span className="px-2 bg-slate-900/40 backdrop-blur-md text-slate-400">Or continue with</span>
               </div>
             </div>
 
             <div className="mt-6">
               <button
                 type="button"
-                className="w-full flex justify-center items-center py-3 px-4 border border-purple-900 rounded-lg shadow-sm bg-slate-900 text-sm font-medium text-slate-300 hover:bg-slate-950 transition-colors"
+                className="w-full flex justify-center items-center py-3 px-4 border border-purple-900 rounded-lg shadow-sm bg-slate-900/40 backdrop-blur-md text-sm font-medium text-slate-300 hover:bg-transparent transition-colors"
               >
                 <img className="h-5 w-5 mr-2" src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google logo" />
                 Sign in with Google
