@@ -1,0 +1,105 @@
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
+const Register = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Registration attempt:', { name, email, password });
+  };
+
+  return (
+    <div className="min-h-screen bg-slate-950 flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8 relative z-20">
+      <div className="max-w-md w-full space-y-8 bg-slate-900 p-10 rounded-2xl shadow-xl border border-purple-900/50">
+        <div>
+          <h2 className="mt-2 text-center text-3xl font-extrabold text-purple-900 tracking-tight">
+            Join the Cosmos
+          </h2>
+          <p className="mt-2 text-center text-sm text-slate-600">
+            Create an account to align with your destiny
+          </p>
+        </div>
+        
+        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+          <div className="rounded-md shadow-sm space-y-4">
+            <div>
+              <label className="block text-sm font-medium text-slate-300 mb-1">Full Name</label>
+              <input
+                type="text"
+                required
+                className="appearance-none relative block w-full px-3 py-3 border border-purple-900 placeholder-slate-400 text-slate-50 rounded-lg focus:outline-none focus:ring-purple-500 focus:border-purple-500 focus:z-10 sm:text-sm transition-colors"
+                placeholder="John Doe"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-slate-300 mb-1">Email address</label>
+              <input
+                type="email"
+                required
+                className="appearance-none relative block w-full px-3 py-3 border border-purple-900 placeholder-slate-400 text-slate-50 rounded-lg focus:outline-none focus:ring-purple-500 focus:border-purple-500 focus:z-10 sm:text-sm transition-colors"
+                placeholder="you@example.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-slate-300 mb-1">Password</label>
+              <input
+                type="password"
+                required
+                className="appearance-none relative block w-full px-3 py-3 border border-purple-900 placeholder-slate-400 text-slate-50 rounded-lg focus:outline-none focus:ring-purple-500 focus:border-purple-500 focus:z-10 sm:text-sm transition-colors"
+                placeholder="••••••••"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </div>
+          </div>
+
+          <div>
+            <button
+              type="submit"
+              className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-orange-500 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition-colors shadow-lg shadow-orange-500/30"
+            >
+              Create Account
+            </button>
+          </div>
+          
+          <div className="mt-6">
+            <div className="relative">
+              <div className="absolute inset-0 flex items-center">
+                <div className="w-full border-t border-purple-900/50"></div>
+              </div>
+              <div className="relative flex justify-center text-sm">
+                <span className="px-2 bg-slate-900 text-slate-400">Or continue with</span>
+              </div>
+            </div>
+
+            <div className="mt-6">
+              <button
+                type="button"
+                className="w-full flex justify-center items-center py-3 px-4 border border-purple-900 rounded-lg shadow-sm bg-slate-900 text-sm font-medium text-slate-300 hover:bg-slate-950 transition-colors"
+              >
+                <img className="h-5 w-5 mr-2" src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google logo" />
+                Sign up with Google
+              </button>
+            </div>
+          </div>
+        </form>
+        
+        <p className="text-center text-sm text-slate-600 mt-8">
+          Already have an account?{' '}
+          <Link to="/login" className="font-medium text-purple-600 hover:text-purple-500">
+            Sign in
+          </Link>
+        </p>
+      </div>
+    </div>
+  );
+};
+
+export default Register;
