@@ -21,9 +21,9 @@ export const Header = () => {
   const location = useLocation();
   const homeHref = (anchor: string) => location.pathname === "/" ? anchor.replace("/", "") : anchor;
 
-  return <header className="sticky top-0 z-50 border-b border-white/5 bg-black/80 backdrop-blur-xl">
+  return <header className="sticky top-0 z-50 border-b border-white/5 bg-black/40 backdrop-blur-xl">
     <nav className="container-full mx-auto px-4 md:px-6">
-      <div className="flex h-16 items-center justify-between gap-4 md:h-20">
+      <div className="flex h-14 items-center justify-between gap-4 md:h-16">
         <Link to="/" className="flex items-center gap-2 text-white hover:text-white/80 transition-colors">
           <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-primary/50 bg-primary/10 text-primary">
             <Sparkles className="h-3.5 w-3.5" />

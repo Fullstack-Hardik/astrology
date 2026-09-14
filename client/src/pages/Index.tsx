@@ -62,7 +62,7 @@ const Index = () => {
 
   return (
     <Layout>
-      <section className="relative -mt-16 min-h-[88svh] overflow-hidden md:-mt-20">
+      <section className="relative -mt-14 min-h-[88svh] overflow-hidden md:-mt-16">
         <video className="absolute inset-0 h-full w-full object-cover contrast-[1.15] saturate-[1.2] brightness-90 filter" autoPlay muted loop playsInline preload="metadata" aria-label="Natasha welcoming you to Divine Wheel Of Fortune">
           <source src="/herovideo.mp4" type="video/mp4" />
         </video>
