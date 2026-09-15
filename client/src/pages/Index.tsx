@@ -63,8 +63,8 @@ const Index = () => {
 
   return (
     <Layout>
-      <section className="relative min-h-[88svh] overflow-hidden bg-black">
-        <video className="absolute inset-x-0 top-[64px] bottom-0 h-[calc(100%-64px)] w-full object-cover contrast-125 saturate-110 brightness-110 filter" autoPlay muted loop playsInline preload="metadata" aria-label="Natassha Sharrma welcoming you to Divine Wheel Of Fortune">
+      <section className="relative min-h-[88svh] overflow-hidden bg-black mt-16 lg:mt-16">
+        <video className="absolute inset-0 h-full w-full object-cover contrast-125 saturate-110 brightness-110 filter" autoPlay muted loop playsInline preload="metadata" aria-label="Natassha Sharrma welcoming you to Divine Wheel Of Fortune">
           <source src="/herovideo.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/20" />
@@ -122,7 +122,8 @@ const Index = () => {
         <div className="container-full grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
           <div className="flex flex-col">
             <div className="relative overflow-hidden rounded-3xl shadow-xl shadow-black/5 border border-black/5 bg-black/5 aspect-[4/5] sm:aspect-square md:aspect-[4/5]">
-              <video className="absolute top-0 left-0 w-full h-[105%] object-cover object-[center_top] rounded-3xl" autoPlay muted loop playsInline preload="metadata"><source src="/about.mp4" type="video/mp4" /></video>
+              {/* To adjust the crop yourself, you can modify the 'scale-[1.01]' and 'translate-y-1' classes below */}
+              <video className="absolute top-0 left-0 w-full h-full object-cover object-[center_top] rounded-3xl scale-[1.01] translate-y-1" autoPlay muted loop playsInline preload="metadata"><source src="/about.mp4" type="video/mp4" /></video>
             </div>
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
@@ -282,7 +283,17 @@ const Index = () => {
         </div>)}</div>
       </div></section>
 
-      <section id="contact" className="bg-gradient-to-r from-purple-50 via-white to-indigo-50 py-20 text-foreground md:py-28 border-t border-black/5"><div className="container-narrow text-center"><p className="text-xs font-semibold uppercase tracking-editorial text-primary">Begin when you’re ready</p><h2 className="mt-5 text-4xl md:text-6xl text-foreground">Your next chapter can start with one conversation.</h2><p className="mx-auto mt-6 max-w-xl leading-7 text-foreground/75">Share your preferred service and session length. Natassha Sharrma will personally help you with the next step.</p><Button size="lg" className="mt-9 h-12 rounded-full bg-primary px-8 text-primary-foreground hover:bg-primary/90 shadow-xl" onClick={() => window.location.href = "mailto:hello@divinewheeloffortune.com?subject=Session enquiry"}>Contact Natassha Sharrma <ArrowRight /></Button></div></section>
+      <section id="contact" className="relative py-20 text-foreground md:py-32 border-t border-black/5 overflow-hidden">
+        <div className="absolute inset-0 bg-white z-0" />
+        {/* Soft purple cloudy gradient effects */}
+        <div className="absolute inset-0 z-0 opacity-70" style={{ backgroundImage: "radial-gradient(circle at 15% 50%, rgba(216, 180, 254, 0.4) 0%, transparent 60%), radial-gradient(circle at 85% 80%, rgba(192, 132, 252, 0.35) 0%, transparent 60%), radial-gradient(circle at 50% 0%, rgba(233, 213, 255, 0.5) 0%, transparent 50%)" }} />
+        <div className="container-narrow text-center relative z-10">
+          <p className="text-xs font-semibold uppercase tracking-editorial text-primary">Begin when you’re ready</p>
+          <h2 className="mt-5 text-4xl md:text-6xl text-foreground drop-shadow-sm">Your next chapter can start with one conversation.</h2>
+          <p className="mx-auto mt-6 max-w-xl leading-7 text-foreground/75 drop-shadow-sm">Share your preferred service and session length. Natassha Sharrma will personally help you with the next step.</p>
+          <Button size="lg" className="mt-10 h-14 rounded-full bg-primary px-10 text-primary-foreground hover:bg-primary/90 shadow-xl text-base transition-transform hover:scale-105" onClick={() => window.location.href = "mailto:hello@divinewheeloffortune.com?subject=Session enquiry"}>Contact Natassha Sharrma <ArrowRight className="ml-2 w-5 h-5" /></Button>
+        </div>
+      </section>
       
 
     </Layout>
