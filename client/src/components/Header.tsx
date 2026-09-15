@@ -86,48 +86,64 @@ export const Header = () => {
         {/* Mobile Navigation */}
         <AnimatePresence>
           {open && (
-            <motion.div 
-              initial={{ opacity: 0, height: 0 }} 
-              animate={{ opacity: 1, height: "auto" }} 
-              exit={{ opacity: 0, height: 0 }} 
-              transition={{ duration: 0.15, ease: "easeOut" }} 
-              className="overflow-hidden border-t border-white/5 lg:hidden"
-            >
-              <div className="grid grid-cols-1 gap-1 py-4 px-2 bg-background/95 backdrop-blur-md">
-                {navLinks.map((link) => (
-                  link.isDropdown ? (
-                    <div key={link.label} className="py-2">
-                      <p className="px-4 py-2 text-xs font-semibold text-white/40 uppercase tracking-widest flex items-center gap-2">
+            <>
+              <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 lg:hidden"
+                onClick={() => setOpen(false)}
+              />
+              <motion.div 
+                initial={{ x: "100%" }} 
+                animate={{ x: 0 }} 
+                exit={{ x: "100%" }} 
+                transition={{ duration: 0.25, ease: "easeOut" }} 
+                className="fixed top-0 right-0 h-[100dvh] w-[80%] max-w-sm bg-black/95 backdrop-blur-xl z-50 shadow-2xl border-l border-white/10 lg:hidden flex flex-col"
+              >
+                <div className="flex items-center justify-between p-4 border-b border-white/10 shrink-0">
+                  <span className="font-serif text-white tracking-wide">Menu</span>
+                  <Button variant="ghost" size="icon" className="text-white hover:text-primary" onClick={() => setOpen(false)}>
+                    <X className="h-5 w-5" />
+                  </Button>
+                </div>
+                <div className="flex-1 overflow-y-auto px-2 py-4">
+                  {navLinks.map((link) => (
+                    link.isDropdown ? (
+                      <div key={link.label} className="py-2">
+                        <p className="px-4 py-2 text-xs font-semibold text-white/40 uppercase tracking-widest flex items-center gap-2">
+                          {link.icon && <link.icon className="h-4 w-4" />}
+                          {link.label}
+                        </p>
+                        <div className="grid grid-cols-1 pl-4">
+                          {link.dropdownItems?.map((subItem) => (
+                            <a 
+                              key={subItem.label} 
+                              href={homeHref(subItem.href)} 
+                              onClick={() => setOpen(false)} 
+                              className="block px-4 py-3 text-sm font-medium text-white/70 hover:bg-white/5 hover:text-primary rounded-lg"
+                            >
+                              {subItem.label}
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    ) : (
+                      <a key={link.label} href={homeHref(link.href)} onClick={() => setOpen(false)} className="flex items-center gap-2 px-4 py-3 text-sm font-medium text-white/70 hover:bg-white/5 hover:text-primary rounded-lg">
                         {link.icon && <link.icon className="h-4 w-4" />}
                         {link.label}
-                      </p>
-                      <div className="grid grid-cols-1 pl-4">
-                        {link.dropdownItems?.map((subItem) => (
-                          <a 
-                            key={subItem.label} 
-                            href={homeHref(subItem.href)} 
-                            onClick={() => setOpen(false)} 
-                            className="block px-4 py-3 text-sm font-medium text-white/70 hover:bg-white/5 hover:text-primary rounded-lg"
-                          >
-                            {subItem.label}
-                          </a>
-                        ))}
-                      </div>
-                    </div>
-                  ) : (
-                    <a key={link.label} href={homeHref(link.href)} onClick={() => setOpen(false)} className="flex items-center gap-2 px-4 py-3 text-sm font-medium text-white/70 hover:bg-white/5 hover:text-primary rounded-lg">
-                      {link.icon && <link.icon className="h-4 w-4" />}
-                      {link.label}
-                    </a>
-                  )
-                ))}
-                <div className="border-t border-white/5 mt-2 pt-4 pb-2 px-4 flex flex-col gap-3">
-                  <a href={homeHref("/#book")} onClick={() => setOpen(false)} className="text-sm font-medium text-primary">Book a session</a>
-                  <Link to="/login" onClick={() => setOpen(false)} className="text-sm font-medium text-white/70">Login</Link>
-                  <Link to="/signup" onClick={() => setOpen(false)} className="text-sm font-medium text-white/70">Sign Up</Link>
+                      </a>
+                    )
+                  ))}
+                  <div className="border-t border-white/5 mt-4 pt-6 px-4 flex flex-col gap-4">
+                    <a href={homeHref("/#book")} onClick={() => setOpen(false)} className="text-sm font-medium text-primary flex items-center gap-2">Book a session</a>
+                    <Link to="/login" onClick={() => setOpen(false)} className="text-sm font-medium text-white/70">Login</Link>
+                    <Link to="/signup" onClick={() => setOpen(false)} className="text-sm font-medium text-white/70">Sign Up</Link>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </>
           )}
         </AnimatePresence>
       </nav>
