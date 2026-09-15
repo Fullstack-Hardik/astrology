@@ -10,6 +10,7 @@ const navLinks = [
   { label: "About", href: "/#about", icon: Info },
   { label: "Category", href: "/#categories", icon: Grid },
   { label: "Shop", href: "/#shop", icon: ShoppingBag },
+  { label: "FAQ", href: "/#faq", icon: HelpCircle },
   { 
     label: "More", 
     isDropdown: true,
@@ -20,7 +21,6 @@ const navLinks = [
       { label: "Blog", href: "/#journal" },
     ]
   },
-  { label: "FAQ", href: "/#faq", icon: HelpCircle },
 ];
 
 export const Header = () => {

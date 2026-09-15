@@ -37,8 +37,8 @@ const Carousel_003 = ({
   const css = `
   .Carousal_003 {
     width: 100%;
-    height: 420px;
-    padding-bottom: 50px !important;
+    height: 320px;
+    padding-bottom: 20px !important;
   }
   
   .Carousal_003 .swiper-slide {
