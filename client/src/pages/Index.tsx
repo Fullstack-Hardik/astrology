@@ -122,8 +122,7 @@ const Index = () => {
         <div className="container-full grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
           <div className="flex flex-col">
             <div className="relative overflow-hidden rounded-3xl shadow-xl shadow-black/5 border border-black/5 bg-black/5 aspect-[4/5] sm:aspect-square md:aspect-[4/5]">
-              {/* To adjust the crop yourself, you can modify the 'scale-[1.01]' and 'translate-y-1' classes below */}
-              <video className="absolute top-0 left-0 w-full h-full object-cover object-[center_top] rounded-3xl scale-[1.01] translate-y-1" autoPlay muted loop playsInline preload="metadata"><source src="/about.mp4" type="video/mp4" /></video>
+              <video className="absolute top-0 left-0 w-full h-[101%] object-cover object-[center_top] rounded-3xl" autoPlay muted loop playsInline preload="metadata"><source src="/about.mp4" type="video/mp4" /></video>
             </div>
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
