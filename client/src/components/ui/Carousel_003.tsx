@@ -111,17 +111,17 @@ const Carousel_003 = ({
         >
           {images.map((image, index) => (
             <SwiperSlide key={index} className="group overflow-hidden rounded-2xl bg-black/40 backdrop-blur-md border border-white/10 shadow-2xl transition-all hover:border-primary/50">
-              <div className="h-[300px] w-full overflow-hidden relative border-b border-border/30">
+              <div className="h-[300px] w-full overflow-hidden relative">
                 <img
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                   src={image.src}
                   alt={image.alt}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              </div>
-              <div className="p-5 absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 to-transparent">
-                 <p className="text-[10px] uppercase tracking-[0.2em] text-primary/90 mb-1">{image.note}</p>
-                 <h3 className="text-xl text-white font-serif">{image.name}</h3>
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <a href="/products" className="bg-white text-foreground px-6 py-2 rounded-full font-medium tracking-wide text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 shadow-xl border border-white/20">
+                    Shop {image.name}
+                  </a>
+                </div>
               </div>
             </SwiperSlide>
           ))}

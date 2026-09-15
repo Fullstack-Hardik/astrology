@@ -122,12 +122,18 @@ const Index = () => {
         <div className="container-full grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
           <div className="flex flex-col">
             <div className="relative overflow-hidden rounded-3xl shadow-xl shadow-black/5 border border-black/5 bg-black/5">
-              <video className="w-full h-auto rounded-3xl" autoPlay muted loop playsInline preload="metadata"><source src="/about.mp4" type="video/mp4" /></video>
+              <video className="w-full h-auto rounded-3xl scale-[1.05] translate-y-4" autoPlay muted loop playsInline preload="metadata"><source src="/about.mp4" type="video/mp4" /></video>
             </div>
-            <div className="mt-6 px-2 text-center md:text-left">
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="mt-6 px-8 py-6 text-center rounded-[2rem] bg-gradient-to-r from-purple-100/80 to-indigo-50/80 shadow-sm border border-purple-200/50 hover:shadow-md transition-shadow"
+            >
               <p className="font-serif text-3xl text-foreground">Natassha Sharrma</p>
               <p className="mt-2 text-xs uppercase tracking-[0.2em] text-primary font-bold">Intuitive guide & energy practitioner</p>
-            </div>
+            </motion.div>
           </div>
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <SectionHeading eyebrow="Her story" title="Meet yourself at the turning point." />
@@ -232,9 +238,22 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="journal" className="border-y border-border bg-muted/45 py-20 md:py-28"><div className="container-full"><SectionHeading eyebrow="From the journal" title="Notes for your inner life." />
-        <div className="mt-12 grid gap-px bg-border md:grid-cols-3">{[["Tarot", "How to frame a question for a meaningful reading"], ["Energy", "A gentle ritual for releasing what no longer serves"], ["Sacred living", "Choosing crystals with attention and intuition"]].map(([tag, title], index) => <article key={title} className="bg-background p-8"><span className="text-6xl font-serif text-primary/25">0{index + 1}</span><p className="mt-12 text-xs uppercase tracking-editorial text-primary">{tag}</p><h3 className="mt-4 text-2xl leading-snug">{title}</h3><button className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-primary">Read article <ArrowRight className="h-4 w-4" /></button></article>)}</div>
-      </div></section>
+      <section id="journal" className="border-y border-border bg-white py-20 md:py-28 relative overflow-hidden">
+        <div className="absolute inset-0 z-0 opacity-[0.03]" style={{ backgroundImage: "url('/images/mala.png')", backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat", filter: "blur(4px)" }} />
+        <div className="container-full relative z-10">
+          <SectionHeading eyebrow="From the journal" title="Notes for your inner life." />
+          <div className="mt-12 grid gap-px bg-black/5 md:grid-cols-3 shadow-lg rounded-2xl overflow-hidden border border-black/5">
+            {[["Tarot", "How to frame a question for a meaningful reading"], ["Energy", "A gentle ritual for releasing what no longer serves"], ["Sacred living", "Choosing crystals with attention and intuition"]].map(([tag, title], index) => (
+              <article key={title} className="bg-white/80 backdrop-blur-md p-10 hover:bg-white transition-colors relative group">
+                <span className="text-7xl font-serif text-primary/10 absolute top-8 right-8 group-hover:scale-110 group-hover:text-primary/20 transition-all duration-500">0{index + 1}</span>
+                <p className="mt-8 text-xs uppercase tracking-editorial text-primary font-semibold">{tag}</p>
+                <h3 className="mt-4 text-2xl leading-snug text-foreground group-hover:text-primary transition-colors">{title}</h3>
+                <button className="mt-10 inline-flex items-center gap-2 text-sm font-semibold text-primary">Read article <ArrowRight className="h-4 w-4 transform group-hover:translate-x-1 transition-transform" /></button>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <section id="faq" className="py-20 md:py-28"><div className="container-narrow"><SectionHeading eyebrow="Good to know" title="Frequently asked questions." />
         <div className="mt-12 border-t border-border">{faqs.map(([question, answer], index) => <div key={question} className="border-b border-border">
