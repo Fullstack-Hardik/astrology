@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, CSSProperties } from 'react';
-import { gsap } from 'gsap';
+import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import './FoldText.css';
@@ -120,7 +120,7 @@ const FoldText = ({
     const pieces = Array.from(root.querySelectorAll('.fold-text-piece'));
     if (!pieces.length) return undefined;
 
-    const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    const reduceMotion = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)').matches : false;
     const activeDuration = reduceMotion ? Math.min(duration, 0.22) : duration;
     const activeStagger = reduceMotion ? Math.min(stagger, 0.02) : stagger;
     const fromVars = {
