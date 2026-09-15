@@ -64,7 +64,7 @@ const Index = () => {
   return (
     <Layout>
       <section className="relative min-h-[88svh] overflow-hidden bg-black">
-        <video className="absolute inset-0 h-full w-full object-cover contrast-125 saturate-110 brightness-110 filter" autoPlay muted loop playsInline preload="metadata" aria-label="Natassha Sharrma welcoming you to Divine Wheel Of Fortune">
+        <video className="absolute inset-x-0 top-[64px] bottom-0 h-[calc(100%-64px)] w-full object-cover contrast-125 saturate-110 brightness-110 filter" autoPlay muted loop playsInline preload="metadata" aria-label="Natassha Sharrma welcoming you to Divine Wheel Of Fortune">
           <source src="/herovideo.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/20" />
@@ -122,7 +122,7 @@ const Index = () => {
         <div className="container-full grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
           <div className="flex flex-col">
             <div className="relative overflow-hidden rounded-3xl shadow-xl shadow-black/5 border border-black/5 bg-black/5 aspect-[4/5] sm:aspect-square md:aspect-[4/5]">
-              <video className="absolute top-0 left-0 w-full h-[115%] object-cover object-[center_top] rounded-3xl" autoPlay muted loop playsInline preload="metadata"><source src="/about.mp4" type="video/mp4" /></video>
+              <video className="absolute top-0 left-0 w-full h-[105%] object-cover object-[center_top] rounded-3xl" autoPlay muted loop playsInline preload="metadata"><source src="/about.mp4" type="video/mp4" /></video>
             </div>
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
@@ -244,11 +244,16 @@ const Index = () => {
           <SectionHeading eyebrow="From the journal" title="Notes for your inner life." />
           <div className="mt-12 grid gap-px bg-black/5 md:grid-cols-3 shadow-lg rounded-2xl overflow-hidden border border-black/5">
             {[["Tarot", "How to frame a question for a meaningful reading"], ["Energy", "A gentle ritual for releasing what no longer serves"], ["Sacred living", "Choosing crystals with attention and intuition"]].map(([tag, title], index) => (
-              <article key={title} className="bg-white/80 backdrop-blur-md p-10 hover:bg-white transition-colors relative group">
-                <span className="text-7xl font-serif text-primary/10 absolute top-8 right-8 group-hover:scale-110 group-hover:text-primary/20 transition-all duration-500">0{index + 1}</span>
-                <p className="mt-8 text-xs uppercase tracking-editorial text-primary font-semibold">{tag}</p>
-                <h3 className="mt-4 text-2xl leading-snug text-foreground group-hover:text-primary transition-colors">{title}</h3>
-                <button className="mt-10 inline-flex items-center gap-2 text-sm font-semibold text-primary">Read article <ArrowRight className="h-4 w-4 transform group-hover:translate-x-1 transition-transform" /></button>
+              <article key={title} className="bg-white/80 backdrop-blur-md p-10 hover:bg-white transition-colors relative group overflow-hidden">
+                {index === 0 && (
+                  <div className="absolute inset-0 z-0 opacity-[0.05] group-hover:scale-105 transition-transform duration-700" style={{ backgroundImage: "url('/images/mala.png')", backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }} />
+                )}
+                <div className="relative z-10">
+                  <span className="text-7xl font-serif text-primary/10 absolute top-0 right-0 group-hover:scale-110 group-hover:text-primary/20 transition-all duration-500">0{index + 1}</span>
+                  <p className="mt-8 text-xs uppercase tracking-editorial text-primary font-semibold">{tag}</p>
+                  <h3 className="mt-4 text-2xl leading-snug text-foreground group-hover:text-primary transition-colors">{title}</h3>
+                  <button className="mt-10 inline-flex items-center gap-2 text-sm font-semibold text-primary">Read article <ArrowRight className="h-4 w-4 transform group-hover:translate-x-1 transition-transform" /></button>
+                </div>
               </article>
             ))}
           </div>
@@ -277,7 +282,7 @@ const Index = () => {
         </div>)}</div>
       </div></section>
 
-      <section id="contact" className="bg-primary py-20 text-primary-foreground md:py-28"><div className="container-narrow text-center"><p className="text-xs font-semibold uppercase tracking-editorial text-primary-foreground/70">Begin when you’re ready</p><h2 className="mt-5 text-4xl md:text-6xl">Your next chapter can start with one conversation.</h2><p className="mx-auto mt-6 max-w-xl leading-7 text-primary-foreground/75">Share your preferred service and session length. Natassha Sharrma will personally help you with the next step.</p><Button size="lg" className="mt-9 h-12 rounded-none bg-background px-8 text-foreground hover:bg-background/90" onClick={() => window.location.href = "mailto:hello@divinewheeloffortune.com?subject=Session enquiry"}>Contact Natassha Sharrma <ArrowRight /></Button></div></section>
+      <section id="contact" className="bg-gradient-to-r from-purple-50 via-white to-indigo-50 py-20 text-foreground md:py-28 border-t border-black/5"><div className="container-narrow text-center"><p className="text-xs font-semibold uppercase tracking-editorial text-primary">Begin when you’re ready</p><h2 className="mt-5 text-4xl md:text-6xl text-foreground">Your next chapter can start with one conversation.</h2><p className="mx-auto mt-6 max-w-xl leading-7 text-foreground/75">Share your preferred service and session length. Natassha Sharrma will personally help you with the next step.</p><Button size="lg" className="mt-9 h-12 rounded-full bg-primary px-8 text-primary-foreground hover:bg-primary/90 shadow-xl" onClick={() => window.location.href = "mailto:hello@divinewheeloffortune.com?subject=Session enquiry"}>Contact Natassha Sharrma <ArrowRight /></Button></div></section>
       
 
     </Layout>
