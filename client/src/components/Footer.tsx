@@ -71,10 +71,10 @@ export const Footer = () => {
       {/* Massive background text */}
       <div className="absolute bottom-0 inset-x-0 overflow-hidden pointer-events-none flex justify-center items-end z-0 h-3/4 pb-4">
         <h1 
-          className="text-[12vw] font-serif leading-[0.75] tracking-tighter font-bold whitespace-nowrap select-none text-transparent" 
+          className="text-[10vw] font-serif leading-[0.75] tracking-tighter font-bold whitespace-nowrap select-none text-transparent" 
           style={{ WebkitTextStroke: '2px rgba(0,0,0,0.08)' }}
         >
-          NATASSHA SHARRMA
+          NATASSHA
         </h1>
       </div>
     </footer>
