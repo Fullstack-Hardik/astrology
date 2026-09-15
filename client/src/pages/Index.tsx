@@ -93,22 +93,19 @@ const Index = () => {
         <div className="absolute inset-0 bg-black/20" />
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
         
-        <div className="container-full relative flex min-h-[88svh] items-end pb-24 pt-32 md:pb-16 z-10">
-          
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] md:w-[40vw] md:h-[40vw] bg-primary/20 rounded-full blur-[120px] pointer-events-none opacity-50 mix-blend-screen" />
-
+        <div className="container-full relative flex min-h-[88svh] items-end pb-8 pt-32 md:pb-12 z-10">
           <motion.div 
             initial="hidden"
             animate="visible"
             variants={{
               hidden: { opacity: 0 },
-              visible: { opacity: 1, transition: { staggerChildren: 0.25 } }
+              visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
             }}
-            className="max-w-3xl text-white drop-shadow-2xl mb-6 md:mb-0 relative z-10"
+            className="max-w-3xl text-white drop-shadow-2xl"
           >
             <motion.p 
-              variants={{ hidden: { opacity: 0, filter: "blur(10px)", y: 15 }, visible: { opacity: 1, filter: "blur(0px)", y: 0, transition: { duration: 1, ease: "easeOut" } } }}
-              className="mb-5 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-primary-foreground/90 flex items-center gap-3"
+              variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } }}
+              className="mb-5 text-xs font-semibold uppercase tracking-widest text-primary-foreground/90 drop-shadow-md flex items-center gap-3"
             >
               <span>Intuitive guidance</span>
               <Star className="w-3 h-3 text-primary/70 fill-current" />
@@ -118,25 +115,25 @@ const Index = () => {
             </motion.p>
             
             <motion.h1 
-              variants={{ hidden: { opacity: 0, filter: "blur(10px)", y: 20 }, visible: { opacity: 1, filter: "blur(0px)", y: 0, transition: { duration: 1, ease: "easeOut" } } }}
-              className="text-5xl leading-[1.05] md:text-7xl lg:text-[5rem] text-white font-serif tracking-tight drop-shadow-2xl"
+              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } }}
+              className="text-4xl leading-[0.95] md:text-6xl lg:text-7xl text-white font-serif tracking-tight drop-shadow-xl"
             >
-              Divine Wheel<br /><span className="italic font-light text-white/90">Of Fortune</span>
+              Divine Wheel<br /><span className="italic font-normal">Of Fortune</span>
             </motion.h1>
             
             <motion.p 
-              variants={{ hidden: { opacity: 0, filter: "blur(10px)", y: 20 }, visible: { opacity: 1, filter: "blur(0px)", y: 0, transition: { duration: 1, ease: "easeOut" } } }}
-              className="mt-7 max-w-xl text-base leading-relaxed text-white/80 md:text-lg font-medium drop-shadow-md"
+              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } }}
+              className="mt-7 max-w-xl text-base leading-7 text-white/90 md:text-lg drop-shadow-md"
             >
               A quiet space with Natassha Sharrma for insight, healing, and deeper connection to your own inner wisdom.
             </motion.p>
             
             <motion.div 
-              variants={{ hidden: { opacity: 0, filter: "blur(10px)", y: 20 }, visible: { opacity: 1, filter: "blur(0px)", y: 0, transition: { duration: 1, ease: "easeOut" } } }}
-              className="mt-10 grid grid-cols-2 sm:flex sm:flex-row gap-4 w-full sm:w-auto max-w-md sm:max-w-none"
+              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } }}
+              className="mt-9 grid grid-cols-2 sm:flex sm:flex-row gap-3 w-full sm:w-auto max-w-md sm:max-w-none"
             >
-              <Button asChild size="lg" className="h-14 rounded-2xl bg-white px-2 sm:px-8 text-black hover:bg-white/90 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-xl shadow-white/10 text-xs sm:text-sm font-semibold group"><a href="#book" className="flex items-center justify-center">Book session <ArrowRight className="hidden sm:block ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" /></a></Button>
-              <Button asChild size="lg" variant="outline" className="h-14 rounded-2xl border-white/20 bg-black/40 backdrop-blur-md px-2 sm:px-8 text-white hover:bg-white/10 hover:text-white active:scale-[0.98] transition-all text-xs sm:text-sm font-semibold"><a href="#services" className="flex items-center justify-center">Explore services</a></Button>
+              <Button asChild size="lg" className="h-12 rounded-none bg-background px-2 sm:px-7 text-foreground hover:bg-background/90 shadow-xl text-xs sm:text-base"><a href="#book" className="flex items-center justify-center">Book a session <ArrowRight className="hidden sm:block ml-2 w-4 h-4" /></a></Button>
+              <Button asChild size="lg" variant="outline" className="h-12 rounded-none border-primary-foreground/60 bg-black/20 backdrop-blur-md px-2 sm:px-7 text-primary-foreground hover:bg-primary-foreground/20 hover:text-primary-foreground shadow-xl text-xs sm:text-base"><a href="#services" className="flex items-center justify-center">Explore services</a></Button>
             </motion.div>
           </motion.div>
         </div>
@@ -146,9 +143,9 @@ const Index = () => {
 
       <section id="about" className="py-20 md:py-32">
         <div className="container-full grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
-          <div className="relative aspect-square md:aspect-video lg:aspect-[4/5] overflow-hidden bg-black rounded-3xl">
-            <video className="h-full w-full object-cover" autoPlay muted loop playsInline preload="auto"><source src="/about.mp4" type="video/mp4" /></video>
-            <div className="absolute inset-x-0 bottom-0 bg-background/90 p-6 backdrop-blur-md"><p className="font-serif text-2xl">Natassha Sharrma</p><p className="mt-1 text-xs uppercase tracking-editorial text-primary">Intuitive guide & energy practitioner</p></div>
+          <div className="relative aspect-[3/4] md:aspect-[4/5] overflow-hidden bg-black rounded-3xl">
+            <video className="h-full w-full object-cover" autoPlay muted loop playsInline preload="metadata"><source src="/about.mp4" type="video/mp4" /></video>
+            <div className="absolute inset-x-0 bottom-0 bg-black/70 border-t border-white/10 p-6 backdrop-blur-md"><p className="font-serif text-2xl text-white">Natassha Sharrma</p><p className="mt-1 text-xs uppercase tracking-editorial text-primary">Intuitive guide & energy practitioner</p></div>
           </div>
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <SectionHeading eyebrow="Her story" title="Meet yourself at the turning point." />
@@ -179,7 +176,7 @@ const Index = () => {
           />
         </div>
         <div className="relative z-10">
-          <CurvedLoop marqueeText="CLARITY ✦ HEALING ✦ ABUNDANCE ✦ ALIGNMENT ✦ " speed={1.5} direction="right" curveAmount={150} />
+          <CurvedLoop marqueeText="CLARITY ✦ HEALING ✦ ABUNDANCE ✦ ALIGNMENT ✦ " speed={0.8} direction="right" curveAmount={150} />
         </div>
       </section>
 
