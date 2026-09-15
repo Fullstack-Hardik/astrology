@@ -2,10 +2,10 @@ import { Heart, Globe, CalendarHeart, Gem, Sparkles } from "lucide-react";
 
 export default function MarqueeSection() {
   const items = [
-    { text: "Private, caring sessions", icon: <Heart className="w-5 h-5 text-[#D4AF37]" /> },
-    { text: "Guidance worldwide", icon: <Globe className="w-5 h-5 text-[#D4AF37]" /> },
-    { text: "Thoughtful booking", icon: <CalendarHeart className="w-5 h-5 text-[#D4AF37]" /> },
-    { text: "Sacredly selected goods", icon: <Gem className="w-5 h-5 text-[#D4AF37]" /> },
+    { text: `"A truly transformative reading." – Sarah M.`, icon: <Heart className="w-5 h-5 text-[#D4AF37]" /> },
+    { text: `"Natasha's guidance was exactly what I needed." – James L.`, icon: <Globe className="w-5 h-5 text-[#D4AF37]" /> },
+    { text: `"Such a calming and clarifying session." – Elena R.`, icon: <CalendarHeart className="w-5 h-5 text-[#D4AF37]" /> },
+    { text: `"The cord-cutting ritual changed everything for me." – Michael T.`, icon: <Gem className="w-5 h-5 text-[#D4AF37]" /> },
   ];
 
   // Duplicate items a few times to ensure seamless infinite scroll
@@ -22,7 +22,7 @@ export default function MarqueeSection() {
         {repeatedItems.map((item, index) => (
           <div key={index} className="flex items-center mx-8 group">
             {item.icon}
-            <span className="mx-4 text-sm md:text-base font-medium tracking-widest uppercase text-white/80 group-hover:text-white transition-colors duration-300">
+            <span className="mx-4 text-sm md:text-base font-medium tracking-wide text-white/90 group-hover:text-white transition-colors duration-300 italic">
               {item.text}
             </span>
             {/* Star separator */}

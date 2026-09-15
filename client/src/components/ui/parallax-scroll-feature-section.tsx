@@ -1,6 +1,7 @@
 import { useRef } from "react"
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { ArrowDown } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
 export interface ParallaxSection {
     id: number | string;
@@ -42,6 +43,11 @@ const SectionItem = ({ section }: { section: ParallaxSection }) => {
                 >
                     {section.description}
                 </motion.p>
+                <motion.div style={{ y: translateY }} className="mt-8">
+                    <Button asChild size="lg" variant="outline" className="rounded-none border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+                        <a href="#book">Book Now</a>
+                    </Button>
+                </motion.div>
             </motion.div>
             <motion.div 
                 style={{ 

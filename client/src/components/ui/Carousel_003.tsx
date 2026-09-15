@@ -84,7 +84,6 @@ const Carousel_003 = ({
           slidesPerView="auto"
           centeredSlides={true}
           loop={loop}
-          loopedSlides={images.length}
           coverflowEffect={{
             rotate: 40,
             stretch: 0,
@@ -118,10 +117,6 @@ const Carousel_003 = ({
                   src={image.src}
                   alt={image.alt}
                 />
-              </div>
-              <div className="p-5 absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent">
-                 <p className="text-xs uppercase tracking-editorial text-primary">{image.note}</p>
-                 <h3 className="mt-1 text-xl text-white font-serif">{image.name}</h3>
               </div>
             </SwiperSlide>
           ))}

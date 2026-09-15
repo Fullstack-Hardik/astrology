@@ -63,16 +63,16 @@ const Index = () => {
   return (
     <Layout>
       <section className="relative -mt-14 min-h-[88svh] overflow-hidden md:-mt-16">
-        <video className="absolute inset-0 h-full w-full object-cover contrast-[1.15] saturate-[1.2] brightness-90 filter" autoPlay muted loop playsInline preload="metadata" aria-label="Natasha welcoming you to Divine Wheel Of Fortune">
+        <video className="absolute inset-0 h-full w-full object-cover contrast-[1.15] saturate-[1.2] brightness-105 filter" autoPlay muted loop playsInline preload="metadata" aria-label="Natasha welcoming you to Divine Wheel Of Fortune">
           <source src="/herovideo.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-black/40 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-black/60 mix-blend-multiply" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-background/20 to-background/80" />
-        <div className="container-full relative flex min-h-[88svh] items-end pb-16 pt-32 md:pb-20 z-10">
+        <div className="container-full relative flex min-h-[88svh] items-end pb-8 pt-32 md:pb-12 z-10">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="max-w-3xl text-white drop-shadow-lg">
             <p className="mb-5 text-xs font-semibold uppercase tracking-editorial text-primary-foreground/90 drop-shadow-md">Intuitive guidance · Energy work · Sacred living</p>
-            <h1 className="text-5xl leading-[0.95] md:text-7xl lg:text-8xl text-white font-serif tracking-tight drop-shadow-xl">Divine Wheel<br /><span className="italic font-normal">Of Fortune</span></h1>
+            <h1 className="text-4xl leading-[0.95] md:text-6xl lg:text-7xl text-white font-serif tracking-tight drop-shadow-xl">Divine Wheel<br /><span className="italic font-normal">Of Fortune</span></h1>
             <p className="mt-7 max-w-xl text-base leading-7 text-white/90 md:text-lg drop-shadow-md">A quiet space with Natasha for insight, healing, and deeper connection to your own inner wisdom.</p>
             <div className="mt-9 flex flex-wrap gap-3">
               <Button asChild size="lg" className="h-12 rounded-none bg-background px-7 text-foreground hover:bg-background/90"><a href="#book">Book a session <ArrowRight /></a></Button>
@@ -87,7 +87,7 @@ const Index = () => {
       <section id="about" className="py-20 md:py-32">
         <div className="container-full grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
           <div className="relative aspect-[4/5] overflow-hidden bg-muted">
-            <video className="h-full w-full object-cover" autoPlay muted loop playsInline preload="metadata"><source src="/herovideo.mp4" type="video/mp4" /></video>
+            <video className="h-full w-full object-cover" autoPlay muted loop playsInline preload="metadata"><source src="/about.mp4" type="video/mp4" /></video>
             <div className="absolute inset-x-0 bottom-0 bg-background/90 p-6 backdrop-blur-md"><p className="font-serif text-2xl">Natasha</p><p className="mt-1 text-xs uppercase tracking-editorial text-primary">Intuitive guide & energy practitioner</p></div>
           </div>
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
