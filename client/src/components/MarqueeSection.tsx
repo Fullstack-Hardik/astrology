@@ -3,7 +3,7 @@ import { Heart, Globe, CalendarHeart, Gem, Sparkles } from "lucide-react";
 export default function MarqueeSection() {
   const items = [
     { text: "A truly transformative reading. Will definitely book again!", user: "@sarah_m", avatar: "https://i.pravatar.cc/100?img=1" },
-    { text: "Natasha's guidance was exactly what I needed right now.", user: "@james_leo", avatar: "https://i.pravatar.cc/100?img=11" },
+    { text: "Natassha Sharrma's guidance was exactly what I needed right now.", user: "@james_leo", avatar: "https://i.pravatar.cc/100?img=11" },
     { text: "Such a calming and clarifying session. Thank you so much!", user: "@elena.r", avatar: "https://i.pravatar.cc/100?img=5" },
     { text: "The cord-cutting ritual changed everything for me. ✨", user: "@michael_t", avatar: "https://i.pravatar.cc/100?img=8" },
   ];

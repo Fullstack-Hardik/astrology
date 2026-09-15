@@ -63,7 +63,7 @@ const Index = () => {
   return (
     <Layout>
       <section className="relative min-h-[88svh] overflow-hidden bg-black">
-        <video className="absolute inset-0 h-full w-full object-cover contrast-125 saturate-110 brightness-110 filter" autoPlay muted loop playsInline preload="metadata" aria-label="Natasha welcoming you to Divine Wheel Of Fortune">
+        <video className="absolute inset-0 h-full w-full object-cover contrast-125 saturate-110 brightness-110 filter" autoPlay muted loop playsInline preload="metadata" aria-label="Natassha Sharrma welcoming you to Divine Wheel Of Fortune">
           <source src="/herovideo.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/20" />
@@ -101,7 +101,7 @@ const Index = () => {
               variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } }}
               className="mt-7 max-w-xl text-base leading-7 text-white/90 md:text-lg drop-shadow-md"
             >
-              A quiet space with Natasha for insight, healing, and deeper connection to your own inner wisdom.
+              A quiet space with Natassha Sharrma for insight, healing, and deeper connection to your own inner wisdom.
             </motion.p>
             
             <motion.div 
@@ -121,15 +121,15 @@ const Index = () => {
         <div className="container-full grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
           <div className="relative aspect-[4/5] overflow-hidden bg-muted">
             <video className="h-full w-full object-cover" autoPlay muted loop playsInline preload="metadata"><source src="/about.mp4" type="video/mp4" /></video>
-            <div className="absolute inset-x-0 bottom-0 bg-background/90 p-6 backdrop-blur-md"><p className="font-serif text-2xl">Natasha</p><p className="mt-1 text-xs uppercase tracking-editorial text-primary">Intuitive guide & energy practitioner</p></div>
+            <div className="absolute inset-x-0 bottom-0 bg-background/90 p-6 backdrop-blur-md"><p className="font-serif text-2xl">Natassha Sharrma</p><p className="mt-1 text-xs uppercase tracking-editorial text-primary">Intuitive guide & energy practitioner</p></div>
           </div>
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <SectionHeading eyebrow="Her story" title="Meet yourself at the turning point." />
             <div className="mt-8 grid gap-6 text-base leading-8 text-muted-foreground md:grid-cols-2">
-              <p>Natasha created Divine Wheel Of Fortune as a considered space for people seeking perspective, emotional clarity, and a more intentional relationship with their inner world.</p>
+              <p>Natassha Sharrma created Divine Wheel Of Fortune as a considered space for people seeking perspective, emotional clarity, and a more intentional relationship with their inner world.</p>
               <p>Each session blends deep listening with symbolic and energetic practices, always shaped around your questions, comfort, and personal pace.</p>
             </div>
-            <Button asChild variant="link" className="mt-8 h-auto p-0 text-primary"><Link to="/about">Discover Natasha’s story <ArrowRight /></Link></Button>
+            <Button asChild variant="link" className="mt-8 h-auto p-0 text-primary"><Link to="/about">Discover Natassha Sharrma’s story <ArrowRight /></Link></Button>
           </motion.div>
         </div>
       </section>
@@ -252,7 +252,7 @@ const Index = () => {
         </div>)}</div>
       </div></section>
 
-      <section id="contact" className="bg-primary py-20 text-primary-foreground md:py-28"><div className="container-narrow text-center"><p className="text-xs font-semibold uppercase tracking-editorial text-primary-foreground/70">Begin when you’re ready</p><h2 className="mt-5 text-4xl md:text-6xl">Your next chapter can start with one conversation.</h2><p className="mx-auto mt-6 max-w-xl leading-7 text-primary-foreground/75">Share your preferred service and session length. Natasha will personally help you with the next step.</p><Button size="lg" className="mt-9 h-12 rounded-none bg-background px-8 text-foreground hover:bg-background/90" onClick={() => window.location.href = "mailto:hello@divinewheeloffortune.com?subject=Session enquiry"}>Contact Natasha <ArrowRight /></Button></div></section>
+      <section id="contact" className="bg-primary py-20 text-primary-foreground md:py-28"><div className="container-narrow text-center"><p className="text-xs font-semibold uppercase tracking-editorial text-primary-foreground/70">Begin when you’re ready</p><h2 className="mt-5 text-4xl md:text-6xl">Your next chapter can start with one conversation.</h2><p className="mx-auto mt-6 max-w-xl leading-7 text-primary-foreground/75">Share your preferred service and session length. Natassha Sharrma will personally help you with the next step.</p><Button size="lg" className="mt-9 h-12 rounded-none bg-background px-8 text-foreground hover:bg-background/90" onClick={() => window.location.href = "mailto:hello@divinewheeloffortune.com?subject=Session enquiry"}>Contact Natassha Sharrma <ArrowRight /></Button></div></section>
       
       <div className="relative h-[600px] w-full overflow-hidden bg-black">
         <DriftWall 
