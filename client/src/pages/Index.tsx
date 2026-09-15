@@ -11,6 +11,8 @@ import { ParallaxScrollFeatureSection } from "@/components/ui/parallax-scroll-fe
 import { FeaturedProducts } from "@/components/ui/FeaturedProducts";
 import Carousel_003 from "@/components/ui/Carousel_003";
 import Aurora from "@/components/ui/Aurora";
+import FoldText from "@/components/ui/FoldText";
+import ClickSpark from "@/components/ui/ClickSpark";
 
 // Removed broken heroVideo import
 const services = [
@@ -63,6 +65,7 @@ const Index = () => {
 
   return (
     <Layout>
+      <ClickSpark sparkColor="#d8b4fe" sparkSize={12} sparkRadius={20} sparkCount={10} duration={500} />
       <section className="relative min-h-[88svh] overflow-hidden bg-black mt-16 lg:mt-16">
         <video className="absolute inset-0 h-full w-full object-cover contrast-125 saturate-110 brightness-110 filter" autoPlay muted loop playsInline preload="metadata" aria-label="Natassha Sharrma welcoming you to Divine Wheel Of Fortune">
           <source src="/herovideo.mp4" type="video/mp4" />
@@ -93,9 +96,32 @@ const Index = () => {
             
             <motion.h1 
               variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } }}
-              className="text-4xl leading-[0.95] md:text-6xl lg:text-7xl text-white font-serif tracking-tight drop-shadow-xl"
+              className="text-4xl leading-[0.95] md:text-6xl lg:text-7xl text-white font-serif tracking-tight drop-shadow-xl flex flex-col"
             >
-              Divine Wheel<br /><span className="italic font-normal">Of Fortune</span>
+              <FoldText 
+                text="Divine Wheel" 
+                splitBy="char" 
+                hinge="top" 
+                trigger="mount" 
+                duration={0.65} 
+                stagger={0.045} 
+                color="currentColor" 
+                fontSize="inherit" 
+                fontWeight="inherit" 
+                className="font-bold block"
+              />
+              <FoldText 
+                text="Of Fortune" 
+                splitBy="char" 
+                hinge="top" 
+                trigger="mount" 
+                duration={0.65} 
+                stagger={0.045} 
+                color="currentColor" 
+                fontSize="inherit" 
+                fontWeight="inherit" 
+                className="italic font-normal block"
+              />
             </motion.h1>
             
             <motion.p 
