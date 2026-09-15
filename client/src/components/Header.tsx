@@ -103,6 +103,19 @@ export const Header = () => {
                 transition={{ duration: 0.25, ease: "easeOut" }} 
                 className="fixed top-0 right-0 h-[100dvh] w-[80%] max-w-sm bg-white backdrop-blur-xl z-50 shadow-2xl border-l border-black/5 lg:hidden flex flex-col"
               >
+                <div className="flex flex-col h-full bg-white">
+                  <div className="flex items-center justify-between p-5 border-b border-black/5 shrink-0">
+                    <span className="font-serif text-foreground tracking-wide text-lg">Menu</span>
+                    <Button variant="ghost" size="icon" className="text-foreground hover:text-primary" onClick={() => setOpen(false)}>
+                      <X className="h-6 w-6" />
+                    </Button>
+                  </div>
+                  <div className="flex-1 overflow-y-auto px-2 py-4">
+                  {navLinks.map((link) => (
+                    link.isDropdown ? (
+                      <div key={link.label} className="py-2">
+                        <p className="px-5 py-2 text-xs font-semibold text-foreground/40 uppercase tracking-widest flex items-center gap-2">
+                          {link.icon && <link.icon className="h-4 w-4" />}
                           {link.label}
                         </p>
                         <div className="grid grid-cols-1 pl-4">
@@ -129,6 +142,7 @@ export const Header = () => {
                     <a href={homeHref("/#book")} onClick={() => setOpen(false)} className="text-sm font-bold text-primary flex items-center gap-2 bg-primary/10 px-4 py-3 rounded-lg w-fit">Book a session</a>
                     <Link to="/login" onClick={() => setOpen(false)} className="text-sm font-semibold text-foreground/70 px-2">Login</Link>
                     <Link to="/signup" onClick={() => setOpen(false)} className="text-sm font-semibold text-foreground/70 px-2">Sign Up</Link>
+                  </div>
                   </div>
                 </div>
               </motion.div>
