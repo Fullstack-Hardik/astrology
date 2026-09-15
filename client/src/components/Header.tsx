@@ -8,13 +8,13 @@ import { Button } from "@/components/ui/button";
 const navLinks = [
   { label: "Home", href: "/#top" },
   { label: "About", href: "/#about" },
+  { label: "Category", href: "/#categories" },
+  { label: "Shop", href: "/#shop" },
   { 
-    label: "Explore", 
+    label: "More", 
     isDropdown: true,
     dropdownItems: [
       { label: "Gallery", href: "/#gallery" },
-      { label: "Shop", href: "/#shop" },
-      { label: "Category", href: "/#categories" },
       { label: "New", href: "/#new" },
       { label: "Blog", href: "/#journal" },
     ]
@@ -28,7 +28,7 @@ export const Header = () => {
   const homeHref = (anchor: string) => location.pathname === "/" ? anchor.replace("/", "") : anchor;
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/5 bg-black/40 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur-2xl">
       <nav className="container-full mx-auto px-4 md:px-6">
         <div className="flex h-12 items-center justify-between gap-4 md:h-14">
           <Link to="/" className="flex items-center gap-2 text-white hover:text-white/80 transition-colors">

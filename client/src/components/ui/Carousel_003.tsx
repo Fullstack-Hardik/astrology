@@ -110,8 +110,8 @@ const Carousel_003 = ({
           modules={[EffectCoverflow, Autoplay, Pagination, Navigation]}
         >
           {images.map((image, index) => (
-            <SwiperSlide key={index} className="group overflow-hidden rounded-xl bg-background border border-border">
-              <div className="h-[300px] w-full overflow-hidden relative">
+            <SwiperSlide key={index} className="group overflow-hidden rounded-2xl bg-black/40 backdrop-blur-md border border-white/10 shadow-2xl transition-all hover:border-primary/50">
+              <div className="h-[300px] w-full overflow-hidden relative border-b border-border/30">
                 <img
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                   src={image.src}

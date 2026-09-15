@@ -2,10 +2,10 @@ import { Heart, Globe, CalendarHeart, Gem, Sparkles } from "lucide-react";
 
 export default function MarqueeSection() {
   const items = [
-    { text: `"A truly transformative reading." – Sarah M.`, icon: <Heart className="w-5 h-5 text-[#D4AF37]" /> },
-    { text: `"Natasha's guidance was exactly what I needed." – James L.`, icon: <Globe className="w-5 h-5 text-[#D4AF37]" /> },
-    { text: `"Such a calming and clarifying session." – Elena R.`, icon: <CalendarHeart className="w-5 h-5 text-[#D4AF37]" /> },
-    { text: `"The cord-cutting ritual changed everything for me." – Michael T.`, icon: <Gem className="w-5 h-5 text-[#D4AF37]" /> },
+    { text: "A truly transformative reading. Will definitely book again!", user: "@sarah_m", avatar: "https://i.pravatar.cc/100?img=1" },
+    { text: "Natasha's guidance was exactly what I needed right now.", user: "@james_leo", avatar: "https://i.pravatar.cc/100?img=11" },
+    { text: "Such a calming and clarifying session. Thank you so much!", user: "@elena.r", avatar: "https://i.pravatar.cc/100?img=5" },
+    { text: "The cord-cutting ritual changed everything for me. ✨", user: "@michael_t", avatar: "https://i.pravatar.cc/100?img=8" },
   ];
 
   // Duplicate items a few times to ensure seamless infinite scroll
@@ -20,13 +20,18 @@ export default function MarqueeSection() {
       {/* Marquee container */}
       <div className="flex whitespace-nowrap animate-marquee">
         {repeatedItems.map((item, index) => (
-          <div key={index} className="flex items-center mx-8 group">
-            {item.icon}
-            <span className="mx-4 text-sm md:text-base font-medium tracking-wide text-white/90 group-hover:text-white transition-colors duration-300 italic">
-              {item.text}
-            </span>
+          <div key={index} className="flex items-center mx-6 group">
+            <div className="flex items-center gap-4 bg-white/10 hover:bg-white/15 transition-colors backdrop-blur-md rounded-2xl px-6 py-4 shadow-lg border border-white/5">
+              <img src={item.avatar} alt={item.user} className="w-10 h-10 rounded-full border border-primary/50 object-cover" />
+              <div className="flex flex-col">
+                <span className="text-[11px] font-semibold tracking-wide text-primary/90">{item.user}</span>
+                <span className="text-sm font-medium text-white/90">
+                  {item.text}
+                </span>
+              </div>
+            </div>
             {/* Star separator */}
-            <Sparkles className="w-4 h-4 text-[#D4AF37]/50 ml-4" />
+            <Star className="w-4 h-4 mx-6 text-primary/30" />
           </div>
         ))}
       </div>
