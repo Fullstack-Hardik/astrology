@@ -1,25 +1,26 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, Sparkles, X, ChevronDown } from "lucide-react";
+import { Menu, Sparkles, X, ChevronDown, Home, Info, Grid, ShoppingBag, MoreHorizontal, HelpCircle } from "lucide-react";
 import { CartIcon } from "@/components/CartIcon";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
-  { label: "Home", href: "/#top" },
-  { label: "About", href: "/#about" },
-  { label: "Category", href: "/#categories" },
-  { label: "Shop", href: "/#shop" },
+  { label: "Home", href: "/#top", icon: Home },
+  { label: "About", href: "/#about", icon: Info },
+  { label: "Category", href: "/#categories", icon: Grid },
+  { label: "Shop", href: "/#shop", icon: ShoppingBag },
   { 
     label: "More", 
     isDropdown: true,
+    icon: MoreHorizontal,
     dropdownItems: [
       { label: "Gallery", href: "/#gallery" },
       { label: "New", href: "/#new" },
       { label: "Blog", href: "/#journal" },
     ]
   },
-  { label: "FAQ", href: "/#faq" },
+  { label: "FAQ", href: "/#faq", icon: HelpCircle },
 ];
 
 export const Header = () => {
@@ -43,7 +44,8 @@ export const Header = () => {
             {navLinks.map((link) => (
               link.isDropdown ? (
                 <div key={link.label} className="relative group py-4">
-                  <button className="flex items-center gap-1 text-[10px] xl:text-[11px] font-medium uppercase tracking-wider text-white/70 transition-all group-hover:text-primary whitespace-nowrap">
+                  <button className="flex items-center gap-1.5 text-[10px] xl:text-[11px] font-medium uppercase tracking-wider text-white/70 transition-all group-hover:text-primary whitespace-nowrap">
+                    {link.icon && <link.icon className="h-3.5 w-3.5 opacity-80" />}
                     {link.label} <ChevronDown className="h-3 w-3 transition-transform group-hover:rotate-180" />
                   </button>
                   <div className="absolute top-full left-0 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top scale-95 group-hover:scale-100 bg-white shadow-xl rounded-md border border-gray-100 py-2 overflow-hidden z-50">
@@ -59,7 +61,8 @@ export const Header = () => {
                   </div>
                 </div>
               ) : (
-                <a key={link.label} href={homeHref(link.href)} className="text-[10px] xl:text-[11px] font-medium uppercase tracking-wider text-white/70 transition-all hover:text-primary whitespace-nowrap">
+                <a key={link.label} href={homeHref(link.href)} className="flex items-center gap-1.5 text-[10px] xl:text-[11px] font-medium uppercase tracking-wider text-white/70 transition-all hover:text-primary whitespace-nowrap">
+                  {link.icon && <link.icon className="h-3.5 w-3.5 opacity-80" />}
                   {link.label}
                 </a>
               )
@@ -94,7 +97,10 @@ export const Header = () => {
                 {navLinks.map((link) => (
                   link.isDropdown ? (
                     <div key={link.label} className="py-2">
-                      <p className="px-4 py-2 text-xs font-semibold text-white/40 uppercase tracking-widest">{link.label}</p>
+                      <p className="px-4 py-2 text-xs font-semibold text-white/40 uppercase tracking-widest flex items-center gap-2">
+                        {link.icon && <link.icon className="h-4 w-4" />}
+                        {link.label}
+                      </p>
                       <div className="grid grid-cols-1 pl-4">
                         {link.dropdownItems?.map((subItem) => (
                           <a 
@@ -109,7 +115,8 @@ export const Header = () => {
                       </div>
                     </div>
                   ) : (
-                    <a key={link.label} href={homeHref(link.href)} onClick={() => setOpen(false)} className="block px-4 py-3 text-sm font-medium text-white/70 hover:bg-white/5 hover:text-primary rounded-lg">
+                    <a key={link.label} href={homeHref(link.href)} onClick={() => setOpen(false)} className="flex items-center gap-2 px-4 py-3 text-sm font-medium text-white/70 hover:bg-white/5 hover:text-primary rounded-lg">
+                      {link.icon && <link.icon className="h-4 w-4" />}
                       {link.label}
                     </a>
                   )

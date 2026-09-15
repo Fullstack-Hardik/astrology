@@ -41,6 +41,30 @@ const shopCategories = [
   { name: "Power Coins", image: "/images/power_coin.png", note: "Intention talismans" },
 ];
 
+const comments = [
+  { text: "A truly transformative reading. Will definitely book again!", user: "@sarah_m", avatar: "https://i.pravatar.cc/100?img=1" },
+  { text: "Natassha Sharrma's guidance was exactly what I needed right now.", user: "@james_leo", avatar: "https://i.pravatar.cc/100?img=11" },
+  { text: "Such a calming and clarifying session. Thank you so much!", user: "@elena.r", avatar: "https://i.pravatar.cc/100?img=5" },
+  { text: "The cord-cutting ritual changed everything for me. ✨", user: "@michael_t", avatar: "https://i.pravatar.cc/100?img=8" },
+  { text: "Amazing energy and such a beautiful space.", user: "@chloe_w", avatar: "https://i.pravatar.cc/100?img=9" },
+  { text: "I feel so much lighter after my session.", user: "@david_k", avatar: "https://i.pravatar.cc/100?img=12" },
+  { text: "The Akashic Records reading was mind-blowing.", user: "@amy.jones", avatar: "https://i.pravatar.cc/100?img=20" },
+  { text: "Highly recommend the Numerology reading! Very insightful.", user: "@sam_smith", avatar: "https://i.pravatar.cc/100?img=33" },
+];
+
+const commentItems = comments.map((comment, i) => ({
+  id: i,
+  content: (
+    <div className="flex items-center gap-4 bg-white/10 hover:bg-white/15 transition-colors backdrop-blur-md rounded-2xl px-6 py-4 shadow-lg border border-white/10 w-full h-full text-left">
+      <img src={comment.avatar} alt={comment.user} className="w-12 h-12 rounded-full border border-primary/50 object-cover" />
+      <div className="flex flex-col flex-1">
+        <span className="text-[12px] font-semibold tracking-wide text-primary">{comment.user}</span>
+        <span className="text-sm font-medium text-white/90 line-clamp-2">{comment.text}</span>
+      </div>
+    </div>
+  )
+}));
+
 const faqs = [
   ["Which session length should I choose?", "A 30-minute session suits one focused question, 60 minutes allows deeper exploration, and 90 minutes offers the most spacious experience."],
   ["How are online sessions held?", "After booking, you receive the session details and a private video-call link. You can join from anywhere."],
@@ -256,10 +280,15 @@ const Index = () => {
       
       <div className="relative h-[600px] w-full overflow-hidden bg-black">
         <DriftWall 
+          items={commentItems}
+          columns={4}
+          tileWidth={320}
+          tileHeight={120}
+          gap={24}
           fade={0.8}
           tilt={12}
           turn={-8}
-          speed={30}
+          speed={25}
           lift={40}
         />
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent z-10 pointer-events-none" />

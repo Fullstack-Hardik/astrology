@@ -1,18 +1,58 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Instagram, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import GradualBlur from "@/components/GradualBlur";
 
-export const Footer = () => (
-  <footer className="relative overflow-hidden bg-foreground text-background">
-    <GradualBlur position="top" height="7rem" strength={2.5} />
-    <div className="container-full relative z-10 py-16 md:py-20">
-      <div className="grid gap-12 border-b border-background/15 pb-14 lg:grid-cols-[1.4fr_0.6fr_0.6fr]">
-        <div><div className="flex items-center gap-3"><span className="grid h-10 w-10 place-items-center rounded-full border border-background/40"><Sparkles className="h-4 w-4" /></span><p className="font-serif text-3xl">Divine Wheel Of Fortune</p></div><p className="mt-5 max-w-md leading-7 text-background/60">Intuitive guidance, energetic practices, and sacred objects for a more conscious inner life.</p><Button asChild variant="outline" className="mt-7 rounded-none border-background/30 bg-transparent text-background hover:bg-background hover:text-foreground"><a href="/#book">Book a session <ArrowRight /></a></Button></div>
-        <div><h3 className="text-xs font-semibold uppercase tracking-editorial text-background/45">Explore</h3><ul className="mt-5 space-y-3 text-sm text-background/70"><li><a href="/#services">Services</a></li><li><a href="/#journal">Journal</a></li><li><a href="/#faq">FAQ</a></li></ul></div>
-        <div><h3 className="text-xs font-semibold uppercase tracking-editorial text-background/45">Connect</h3><ul className="mt-5 space-y-3 text-sm text-background/70"><li><a href="mailto:hello@divinewheeloffortune.com">Email Natassha Sharrma</a></li><li><a href="#" className="inline-flex items-center gap-2"><Instagram className="h-4 w-4" /> Instagram</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li></ul></div>
+export const Footer = () => {
+  return (
+    <footer className="bg-background text-foreground border-t border-border/50">
+      <div className="container-full py-16 md:py-24">
+        <div className="grid gap-12 lg:grid-cols-12">
+          {/* Brand section */}
+          <div className="lg:col-span-5 flex flex-col items-start">
+            <Link to="/" className="flex items-center gap-3 mb-6">
+              <span className="grid h-10 w-10 place-items-center rounded-full border border-primary/30 bg-primary/5 text-primary">
+                <Sparkles className="h-5 w-5" />
+              </span>
+              <span className="font-serif text-2xl tracking-wide">Divine Wheel<br/><span className="italic text-primary/80 text-xl font-light">Of Fortune</span></span>
+            </Link>
+            <p className="max-w-md text-sm leading-7 text-muted-foreground">
+              Intuitive guidance, energetic practices, and sacred objects for a more conscious inner life.
+            </p>
+            <Button asChild variant="outline" className="mt-8 rounded-full border-border bg-transparent text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary px-6 shadow-sm transition-all">
+              <a href="/#book">Book a session <ArrowRight className="ml-2 w-4 h-4" /></a>
+            </Button>
+          </div>
+
+          {/* Spacer */}
+          <div className="hidden lg:block lg:col-span-1"></div>
+
+          {/* Links section */}
+          <div className="lg:col-span-3">
+            <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-foreground mb-6">Explore</h3>
+            <ul className="space-y-4 text-sm text-muted-foreground/80">
+              <li><a href="/#services" className="hover:text-primary transition-colors">Services</a></li>
+              <li><a href="/#journal" className="hover:text-primary transition-colors">Journal</a></li>
+              <li><a href="/#faq" className="hover:text-primary transition-colors">FAQ</a></li>
+            </ul>
+          </div>
+
+          {/* Connect section */}
+          <div className="lg:col-span-3">
+            <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-foreground mb-6">Connect</h3>
+            <ul className="space-y-4 text-sm text-muted-foreground/80">
+              <li><a href="mailto:hello@divinewheeloffortune.com" className="hover:text-primary transition-colors">Email Natassha Sharrma</a></li>
+              <li><a href="#" className="inline-flex items-center gap-2 hover:text-primary transition-colors"><Instagram className="h-4 w-4" /> Instagram</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">Privacy Policy</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">Terms of Service</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-16 pt-8 border-t border-border/50 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
+          <p>© {new Date().getFullYear()} Divine Wheel Of Fortune. All rights reserved.</p>
+          <p className="tracking-wider uppercase">India <span className="mx-2 text-primary">✦</span> Sessions worldwide</p>
+        </div>
       </div>
-      <div className="flex flex-col gap-3 pt-6 text-xs text-background/40 sm:flex-row sm:items-center sm:justify-between"><p>© {new Date().getFullYear()} Divine Wheel Of Fortune</p><p>India · Sessions worldwide</p></div>
-    </div>
-  </footer>
-);
+    </footer>
+  );
+};
