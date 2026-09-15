@@ -122,7 +122,7 @@ export default {
         "slide-in-right": "slide-in-right 0.3s ease-out",
         "slide-out-right": "slide-out-right 0.3s ease-out",
         "ken-burns": "ken-burns 20s ease-out forwards",
-        "marquee": "marquee 15s linear infinite",
+        "marquee": "marquee 8s linear infinite",
         "float": "float 6s ease-in-out infinite",
       },
     },

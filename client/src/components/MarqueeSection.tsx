@@ -15,7 +15,7 @@ export default function MarqueeSection() {
       <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
       <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
 
-      <div className="flex whitespace-nowrap animate-marquee">
+      <div className="flex whitespace-nowrap animate-marquee will-change-transform">
         {repeatedItems.map((item, index) => (
           <div key={index} className="flex items-center mx-8 group">
             {item.icon}

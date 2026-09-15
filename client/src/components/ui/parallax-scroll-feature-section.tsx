@@ -26,7 +26,7 @@ const SectionItem = ({ section }: { section: ParallaxSection }) => {
             <motion.div 
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
+                viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.7 }}
                 className="flex-1"
             >
@@ -44,7 +44,7 @@ const SectionItem = ({ section }: { section: ParallaxSection }) => {
             <motion.div 
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, margin: "-100px" }}
+                viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.7, delay: 0.2 }}
                 className="flex-1 relative w-full flex justify-center"
             >
@@ -63,7 +63,7 @@ const SectionItem = ({ section }: { section: ParallaxSection }) => {
 
 export const ParallaxScrollFeatureSection = ({ title, description, sections }: ParallaxScrollFeatureSectionProps) => {
   return (
-    <div className="bg-background text-foreground py-20 overflow-hidden">
+    <div className="bg-background text-foreground py-20 overflow-x-hidden">
       <div className='min-h-[60vh] w-full flex flex-col items-center justify-center text-center px-6'>
         <p className="mb-4 text-xs font-semibold uppercase tracking-editorial text-primary">Explore</p>
         <h1 className='text-4xl md:text-6xl max-w-3xl'>{title}</h1>
