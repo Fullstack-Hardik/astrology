@@ -1,4 +1,4 @@
-import { Heart, Globe, CalendarHeart, Gem, Sparkles } from "lucide-react";
+import { Heart, Globe, CalendarHeart, Gem, Sparkles, Star } from "lucide-react";
 
 export default function MarqueeSection() {
   const items = [
