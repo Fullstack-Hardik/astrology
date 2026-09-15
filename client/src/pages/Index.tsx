@@ -67,7 +67,7 @@ const Index = () => {
     <Layout>
       <ClickSpark sparkColor="#d8b4fe" sparkSize={12} sparkRadius={20} sparkCount={10} duration={500} />
       <section className="relative min-h-[88svh] overflow-hidden bg-black mt-16 lg:mt-16">
-        <video className="absolute inset-0 h-full w-full object-cover contrast-125 saturate-110 brightness-110 filter" autoPlay muted loop playsInline preload="metadata" aria-label="Natassha Sharrma welcoming you to Divine Wheel Of Fortune">
+        <video className="absolute inset-0 h-full w-full object-cover contrast-125 saturate-110 brightness-110 filter" autoPlay muted loop playsInline preload="metadata" aria-label="Nattasha Sharrma welcoming you to Divine Wheel Of Fortune">
           <source src="/herovideo.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/20" />
@@ -128,7 +128,7 @@ const Index = () => {
               variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } }}
               className="mt-7 max-w-xl text-base leading-7 text-white/90 md:text-lg drop-shadow-md"
             >
-              A quiet space with Natassha Sharrma for insight, healing, and deeper connection to your own inner wisdom.
+              A quiet space with Nattasha Sharrma for insight, healing, and deeper connection to your own inner wisdom.
             </motion.p>
             
             <motion.div 
@@ -157,17 +157,17 @@ const Index = () => {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="mt-6 px-8 py-6 text-center rounded-[2rem] bg-gradient-to-r from-purple-100/80 to-indigo-50/80 shadow-sm border border-purple-200/50 hover:shadow-md transition-shadow"
             >
-              <p className="font-serif text-3xl text-foreground">Natassha Sharrma</p>
+              <p className="font-serif text-3xl text-foreground">Nattasha Sharrma</p>
               <p className="mt-2 text-xs uppercase tracking-[0.2em] text-primary font-bold">Intuitive guide & energy practitioner</p>
             </motion.div>
           </div>
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <SectionHeading eyebrow="Her story" title="Meet yourself at the turning point." />
             <div className="mt-8 grid gap-6 text-base leading-8 text-muted-foreground md:grid-cols-2">
-              <p>Natassha Sharrma created Divine Wheel Of Fortune as a considered space for people seeking perspective, emotional clarity, and a more intentional relationship with their inner world.</p>
+              <p>Nattasha Sharrma created Divine Wheel Of Fortune as a considered space for people seeking perspective, emotional clarity, and a more intentional relationship with their inner world.</p>
               <p>Each session blends deep listening with symbolic and energetic practices, always shaped around your questions, comfort, and personal pace.</p>
             </div>
-            <Button asChild variant="link" className="mt-8 h-auto p-0 text-primary"><Link to="/about">Discover Natassha Sharrma’s story <ArrowRight /></Link></Button>
+            <Button asChild variant="link" className="mt-8 h-auto p-0 text-primary"><Link to="/about">Discover Nattasha Sharrma’s story <ArrowRight /></Link></Button>
           </motion.div>
         </div>
       </section>
@@ -315,8 +315,8 @@ const Index = () => {
         <div className="container-narrow text-center relative z-10">
           <p className="text-xs font-semibold uppercase tracking-editorial text-primary">Begin when you’re ready</p>
           <h2 className="mt-5 text-4xl md:text-6xl text-foreground drop-shadow-sm">Your next chapter can start with one conversation.</h2>
-          <p className="mx-auto mt-6 max-w-xl leading-7 text-foreground/75 drop-shadow-sm">Share your preferred service and session length. Natassha Sharrma will personally help you with the next step.</p>
-          <Button size="lg" className="mt-10 h-14 rounded-full bg-primary px-10 text-primary-foreground hover:bg-primary/90 shadow-xl text-base transition-transform hover:scale-105" onClick={() => window.location.href = "mailto:hello@divinewheeloffortune.com?subject=Session enquiry"}>Contact Natassha Sharrma <ArrowRight className="ml-2 w-5 h-5" /></Button>
+          <p className="mx-auto mt-6 max-w-xl leading-7 text-foreground/75 drop-shadow-sm">Share your preferred service and session length. Nattasha Sharrma will personally help you with the next step.</p>
+          <Button size="lg" className="mt-10 h-14 rounded-full bg-primary px-10 text-primary-foreground hover:bg-primary/90 shadow-xl text-base transition-transform hover:scale-105" onClick={() => window.location.href = "mailto:hello@divinewheeloffortune.com?subject=Session enquiry"}>Contact Nattasha Sharrma <ArrowRight className="ml-2 w-5 h-5" /></Button>
         </div>
       </section>
       

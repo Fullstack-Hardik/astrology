@@ -74,7 +74,7 @@ export const Footer = () => {
           className="text-[10vw] font-serif leading-[0.75] tracking-tighter font-bold whitespace-nowrap select-none text-transparent" 
           style={{ WebkitTextStroke: '2px rgba(0,0,0,0.08)' }}
         >
-          NATASSHA
+          NATTASHA
         </h1>
       </div>
     </footer>
