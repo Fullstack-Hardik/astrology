@@ -6,7 +6,7 @@ import { Layout } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import CurvedLoop from "@/components/CurvedLoop";
 import MarqueeSection from "@/components/MarqueeSection";
-import DriftWall from "@/components/ui/DriftWall";
+
 import { ParallaxScrollFeatureSection } from "@/components/ui/parallax-scroll-feature-section";
 import { FeaturedProducts } from "@/components/ui/FeaturedProducts";
 import Carousel_003 from "@/components/ui/Carousel_003";
@@ -41,29 +41,6 @@ const shopCategories = [
   { name: "Power Coins", image: "/images/power_coin.png", note: "Intention talismans" },
 ];
 
-const comments = [
-  { text: "A truly transformative reading. Will definitely book again!", user: "@sarah_m", avatar: "https://i.pravatar.cc/100?img=1" },
-  { text: "Natassha Sharrma's guidance was exactly what I needed right now.", user: "@james_leo", avatar: "https://i.pravatar.cc/100?img=11" },
-  { text: "Such a calming and clarifying session. Thank you so much!", user: "@elena.r", avatar: "https://i.pravatar.cc/100?img=5" },
-  { text: "The cord-cutting ritual changed everything for me. ✨", user: "@michael_t", avatar: "https://i.pravatar.cc/100?img=8" },
-  { text: "Amazing energy and such a beautiful space.", user: "@chloe_w", avatar: "https://i.pravatar.cc/100?img=9" },
-  { text: "I feel so much lighter after my session.", user: "@david_k", avatar: "https://i.pravatar.cc/100?img=12" },
-  { text: "The Akashic Records reading was mind-blowing.", user: "@amy.jones", avatar: "https://i.pravatar.cc/100?img=20" },
-  { text: "Highly recommend the Numerology reading! Very insightful.", user: "@sam_smith", avatar: "https://i.pravatar.cc/100?img=33" },
-];
-
-const commentItems = comments.map((comment, i) => ({
-  id: i,
-  content: (
-    <div className="flex items-center gap-4 bg-white/10 hover:bg-white/15 transition-colors backdrop-blur-md rounded-2xl px-6 py-4 shadow-lg border border-white/10 w-full h-full text-left">
-      <img src={comment.avatar} alt={comment.user} className="w-12 h-12 rounded-full border border-primary/50 object-cover" />
-      <div className="flex flex-col flex-1">
-        <span className="text-[12px] font-semibold tracking-wide text-primary">{comment.user}</span>
-        <span className="text-sm font-medium text-white/90 line-clamp-2">{comment.text}</span>
-      </div>
-    </div>
-  )
-}));
 
 const faqs = [
   ["Which session length should I choose?", "A 30-minute session suits one focused question, 60 minutes allows deeper exploration, and 90 minutes offers the most spacious experience."],
@@ -143,9 +120,14 @@ const Index = () => {
 
       <section id="about" className="py-20 md:py-32">
         <div className="container-full grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
-          <div className="relative aspect-[3/4] md:aspect-[4/5] overflow-hidden bg-black rounded-3xl">
-            <video className="h-full w-full object-cover" autoPlay muted loop playsInline preload="metadata"><source src="/about.mp4" type="video/mp4" /></video>
-            <div className="absolute inset-x-0 bottom-0 bg-black/70 border-t border-white/10 p-6 backdrop-blur-md"><p className="font-serif text-2xl text-white">Natassha Sharrma</p><p className="mt-1 text-xs uppercase tracking-editorial text-primary">Intuitive guide & energy practitioner</p></div>
+          <div className="flex flex-col">
+            <div className="relative overflow-hidden rounded-3xl shadow-xl shadow-black/5 border border-black/5 bg-black/5">
+              <video className="w-full h-auto rounded-3xl" autoPlay muted loop playsInline preload="metadata"><source src="/about.mp4" type="video/mp4" /></video>
+            </div>
+            <div className="mt-6 px-2 text-center md:text-left">
+              <p className="font-serif text-3xl text-foreground">Natassha Sharrma</p>
+              <p className="mt-2 text-xs uppercase tracking-[0.2em] text-primary font-bold">Intuitive guide & energy practitioner</p>
+            </div>
           </div>
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <SectionHeading eyebrow="Her story" title="Meet yourself at the turning point." />
@@ -278,21 +260,7 @@ const Index = () => {
 
       <section id="contact" className="bg-primary py-20 text-primary-foreground md:py-28"><div className="container-narrow text-center"><p className="text-xs font-semibold uppercase tracking-editorial text-primary-foreground/70">Begin when you’re ready</p><h2 className="mt-5 text-4xl md:text-6xl">Your next chapter can start with one conversation.</h2><p className="mx-auto mt-6 max-w-xl leading-7 text-primary-foreground/75">Share your preferred service and session length. Natassha Sharrma will personally help you with the next step.</p><Button size="lg" className="mt-9 h-12 rounded-none bg-background px-8 text-foreground hover:bg-background/90" onClick={() => window.location.href = "mailto:hello@divinewheeloffortune.com?subject=Session enquiry"}>Contact Natassha Sharrma <ArrowRight /></Button></div></section>
       
-      <div className="relative h-[600px] w-full overflow-hidden bg-black">
-        <DriftWall 
-          items={commentItems}
-          columns={4}
-          tileWidth={320}
-          tileHeight={120}
-          gap={24}
-          fade={0.8}
-          tilt={12}
-          turn={-8}
-          speed={25}
-          lift={40}
-        />
-        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent z-10 pointer-events-none" />
-      </div>
+
     </Layout>
   );
 };
