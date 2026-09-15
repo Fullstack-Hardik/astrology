@@ -62,22 +62,55 @@ const Index = () => {
 
   return (
     <Layout>
-      <section className="relative -mt-14 min-h-[88svh] overflow-hidden md:-mt-16">
-        <video className="absolute inset-0 h-full w-full object-cover contrast-[1.15] saturate-[1.2] brightness-105 filter" autoPlay muted loop playsInline preload="metadata" aria-label="Natasha welcoming you to Divine Wheel Of Fortune">
+      <section className="relative -mt-14 min-h-[88svh] overflow-hidden md:-mt-16 bg-black">
+        <video className="absolute inset-0 h-full w-full object-cover contrast-[1.1] saturate-[1.1] filter" autoPlay muted loop playsInline preload="metadata" aria-label="Natasha welcoming you to Divine Wheel Of Fortune">
           <source src="/herovideo.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-black/60 mix-blend-multiply" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-background/20 to-background/80" />
+        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
+        
         <div className="container-full relative flex min-h-[88svh] items-end pb-8 pt-32 md:pb-12 z-10">
-          <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="max-w-3xl text-white drop-shadow-lg">
-            <p className="mb-5 text-xs font-semibold uppercase tracking-editorial text-primary-foreground/90 drop-shadow-md">Intuitive guidance · Energy work · Sacred living</p>
-            <h1 className="text-4xl leading-[0.95] md:text-6xl lg:text-7xl text-white font-serif tracking-tight drop-shadow-xl">Divine Wheel<br /><span className="italic font-normal">Of Fortune</span></h1>
-            <p className="mt-7 max-w-xl text-base leading-7 text-white/90 md:text-lg drop-shadow-md">A quiet space with Natasha for insight, healing, and deeper connection to your own inner wisdom.</p>
-            <div className="mt-9 flex flex-wrap gap-3">
-              <Button asChild size="lg" className="h-12 rounded-none bg-background px-7 text-foreground hover:bg-background/90"><a href="#book">Book a session <ArrowRight /></a></Button>
-              <Button asChild size="lg" variant="outline" className="h-12 rounded-none border-primary-foreground/60 bg-transparent px-7 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"><a href="#services">Explore services</a></Button>
-            </div>
+          <motion.div 
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
+            }}
+            className="max-w-3xl text-white drop-shadow-2xl"
+          >
+            <motion.p 
+              variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } }}
+              className="mb-5 text-xs font-semibold uppercase tracking-widest text-primary-foreground/90 drop-shadow-md flex items-center gap-3"
+            >
+              <span>Intuitive guidance</span>
+              <Star className="w-3 h-3 text-primary/70 fill-current" />
+              <span>Energy work</span>
+              <Star className="w-3 h-3 text-primary/70 fill-current" />
+              <span>Sacred living</span>
+            </motion.p>
+            
+            <motion.h1 
+              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } }}
+              className="text-4xl leading-[0.95] md:text-6xl lg:text-7xl text-white font-serif tracking-tight drop-shadow-xl"
+            >
+              Divine Wheel<br /><span className="italic font-normal">Of Fortune</span>
+            </motion.h1>
+            
+            <motion.p 
+              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } }}
+              className="mt-7 max-w-xl text-base leading-7 text-white/90 md:text-lg drop-shadow-md"
+            >
+              A quiet space with Natasha for insight, healing, and deeper connection to your own inner wisdom.
+            </motion.p>
+            
+            <motion.div 
+              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } }}
+              className="mt-9 flex flex-wrap gap-3"
+            >
+              <Button asChild size="lg" className="h-12 rounded-none bg-background px-7 text-foreground hover:bg-background/90 shadow-xl"><a href="#book">Book a session <ArrowRight /></a></Button>
+              <Button asChild size="lg" variant="outline" className="h-12 rounded-none border-primary-foreground/60 bg-black/20 backdrop-blur-md px-7 text-primary-foreground hover:bg-primary-foreground/20 hover:text-primary-foreground shadow-xl"><a href="#services">Explore services</a></Button>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -137,8 +170,8 @@ const Index = () => {
 
       <FeaturedProducts />
 
-      <section id="shop" className="bg-muted/45 py-20 md:py-28 overflow-hidden">
-        <div className="container-full">
+      <section id="shop" className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-b from-sky-100/50 via-white to-sky-50/30">
+        <div className="container-full relative z-10">
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end mb-14">
              <SectionHeading eyebrow="The sacred shop" title="Objects with intention." copy="Thoughtfully chosen companions for prayer, reflection, ritual, and everyday grounding." />
              <Button asChild variant="outline" className="rounded-none"><Link to="/products">Shop all <ArrowRight /></Link></Button>
