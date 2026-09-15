@@ -29,7 +29,7 @@ export const Header = () => {
   const homeHref = (anchor: string) => location.pathname === "/" ? anchor.replace("/", "") : anchor;
 
   return (
-    <header className="sticky top-0 z-50 border-b border-black/5 bg-white/60 backdrop-blur-xl">
+    <header className="fixed top-0 inset-x-0 z-50 border-b border-black/5 bg-white/60 backdrop-blur-xl">
       <nav className="container-full mx-auto px-4 md:px-6">
         <div className="flex h-16 items-center justify-between gap-4">
           <Link to="/" className="flex items-center gap-2 text-foreground hover:text-primary transition-colors shrink-0">
